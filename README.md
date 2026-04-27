@@ -1,4 +1,4 @@
-# 🎯 Spott Team - Cursor Configuration
+# 🎯 Cursor Configuration
 
 Configuração de Agents, Skills e Rules para o time de desenvolvimento Spott.
 
@@ -6,24 +6,29 @@ Configuração de Agents, Skills e Rules para o time de desenvolvimento Spott.
 
 ```
 .cursor/
-├── agents/              # Subagentes especializados
-│   ├── backend-sr.md    # C# .NET Developer
-│   ├── frontend-sr.md   # React/Next.js Developer
-│   ├── qa-reviewer.md   # QA Engineer
-│   ├── po-product.md    # Product Owner
-│   └── tech-lead.md     # Tech Lead (Orquestrador)
+├── agents/                 # Subagentes especializados
+│   ├── backend-sr.md       # C# .NET Developer
+│   ├── frontend-sr.md      # React/Next.js Developer
+│   ├── qa-reviewer.md      # QA Engineer
+│   ├── po-product.md       # Product Owner
+│   └── tech-lead.md        # Tech Lead (Orquestrador)
 │
-├── skills/              # Skills reutilizáveis
-│   ├── create-pr/       # Criar PRs padronizados
-│   ├── grill-me/        # Challenge de requisitos
-│   ├── jobs-to-be-done/ # Resumo diário de trabalho
-│   └── clickup-sync/    # Sincronizar ClickUp
+├── skills/                 # Skills reutilizáveis
+│   ├── clickup-sync/       # Sincronizar ClickUp
+│   ├── create-pr/          # Criar PRs padronizados
+│   ├── design-an-interface/# Gerar designs de interface
+│   ├── grill-me/           # Challenge de requisitos
+│   ├── jobs-to-be-done/    # Resumo diário de trabalho
+│   ├── to-vertical-slices/ # Quebrar plano em issues
+│   ├── triage-issue/       # Triagem de bugs/issues
+│   ├── improve-front-arch/ # Padronizar arquitetura frontend
+│   └── write-prd/          # Criar novos skills
 │
-├── rules/               # Regras de workflow
-│   └── workflow.md     # Processos do time
+├── rules/                  # Regras de workflow
+│   └── workflow.md        # Processos do time
 │
-├── workspace.json      # Configuração do workspace
-└── README.md           # Este arquivo
+├── workspace.json         # Configuração do workspace
+└── README.md              # Este arquivo
 ```
 
 ## 🤖 Agents
@@ -52,13 +57,18 @@ Para usar um agent, simplesmente mencione-o na conversa:
 ## 🛠️ Skills
 
 ### Como usar
-Para usar uma skill, invoque pelo nome:
+Para usar uma skill, invoque pelo nome ou descreva a necessidade:
 
 ```
 /jobs-to-be-done
 /create-pr
-/grill-me sobre [tópico]
 /clickup-sync task CU-123456
+/grill-me sobre [tópico]
+/triage-issue #123
+/to-vertical-slices a partir do PRD
+/design-an-interface para este módulo
+/improve-front-arch no módulo users
+/write-prd para novo skill de deploy
 ```
 
 ### Skills Disponíveis
@@ -67,8 +77,13 @@ Para usar uma skill, invoque pelo nome:
 |-------|-----------|-------------|
 | `jobs-to-be-done` | Resumo diário de tasks e PRs | Início do dia |
 | `create-pr` | Criar PRs padronizados | Ao terminar feature |
+| `clickup-sync` | Sincronizar ClickUp com GitHub | Durante workflow |
+| `design-an-interface` | Gerar múltiplos designs de interface | Projetar APIs ou componentes |
 | `grill-me` | Challenge de requisitos | Antes de decisões importantes |
-| `clickup-sync` | Sincronizar ClickUp | Durante workflow |
+| `improve-front-arch` | Padronizar módulo ao padrão coupons | Refatorar/criar módulos frontend |
+| `to-vertical-slices` | Quebrar plano em issues GitHub | Dividir trabalho em tickets |
+| `triage-issue` | Triagem e classificação de bugs | Analisar novas issues |
+| `write-prd` | Criar novos skills para o time | Desenvolver novas capacidades |
 
 ## 📋 Rules
 
@@ -79,27 +94,33 @@ Acesse em `.cursor/rules/workflow.md` para ver:
 - Checklists
 - Comandos úteis
 
-## 🚀 Workflow Diário Recomendado
+## 🚀 Workflow Recomendado
 
 ### Manhã (09:00)
 ```
 1. Rode: /jobs-to-be-done
 2. Revise tasks e PRs pendentes
 3. Planeje o dia
+4. Triagem: Analise novas issues com /triage-issue
 ```
 
 ### Durante o Dia
 ```
 1. Ao pegar task: /clickup-sync task CU-123456
-2. Desenvolva com agent apropriado
-3. Ao terminar: /create-pr
+2. Novo módulo: Use /improve-front-arch para seguir padrão
+3. Bug reportado: /triage-issue para classificar
+4. Planejamento: /to-vertical-slices para dividir em issues
+5. Design: /design-an-interface para explorar opções
+6. Decisões: /grill-me para validar requisitos
+7. Ao terminar: /create-pr
 ```
 
 ### Final do Dia
 ```
 1. Atualize ClickUp
-2. Reporte status
+2. Reporte status no Slack
 3. Prepare amanhã
+4. Crie skills: /write-prd se identificar necessidade
 ```
 
 ## 🔗 Integrações
@@ -132,7 +153,3 @@ O arquivo `workspace.json` define:
 - Agents disponíveis
 - Skills disponíveis
 - Contexto de cada agent
-
----
-
-**Spott Team** 🚀
