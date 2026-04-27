@@ -137,15 +137,6 @@ CU-123456 #comment progresso`
 - Bloqueios: `#dev-blockers`
 - Releases: `#releases`
 
-## 📚 Documentação Adicional
-
-- [Backend Guidelines](agents/backend-sr.md)
-- [Frontend Guidelines](agents/frontend-sr.md)
-- [QA Process](agents/qa-reviewer.md)
-- [PO Workflow](agents/po-product.md)
-- [Tech Lead Guide](agents/tech-lead.md)
-- [Team Workflow](rules/workflow.md)
-
 ## ⚙️ Configuração
 
 O arquivo `workspace.json` define:
