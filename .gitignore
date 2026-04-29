@@ -1,0 +1,6 @@
+# Current job related files
+.cursor/skills/_
+.cursor/rules/_
+.cursor/agents/_
+.cursor/agents/spott-*.md
+spott-workspace.json
