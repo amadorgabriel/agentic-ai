@@ -4,3 +4,4 @@
 .agents/agents/_
 .agents/agents/spott-*.md
 spott-workspace.json
+.specs
