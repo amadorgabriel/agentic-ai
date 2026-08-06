@@ -1,7 +1,17 @@
-# Current job related files
+# Current job related files (local-only; not part of the public showcase)
 .agents/skills/_
 .agents/rules/_
 .agents/agents/_
 .agents/agents/spott-*.md
-spott-workspace.json
 .specs
+
+
+.agents/skills/deprecated/**/
+.agents/skills/job-related/**/
+
+
+# Career personal outputs — keep only README structure placeholders tracked
+# (un-ignore directories so nested README.md negation can apply)
+.agents/skills/portfolio/agentic-career/output/**
+!.agents/skills/portfolio/agentic-career/output/**/
+!.agents/skills/portfolio/agentic-career/output/**/README.md

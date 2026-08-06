@@ -1,52 +1,35 @@
 # agentic-ai
 
-Minhas configurações de agents, skills e rules para desenvolvimento.
+Vitrine das minhas **skills de agentes de IA** — workflows reutilizáveis para Cursor, Claude Code e ferramentas compatíveis.
 
-### Estrutura
+> **Descrição sugerida (GitHub About):**  
+> Vitrine de skills de agentes de IA: engenharia, portfolio e job-related — workflows reutilizáveis para Cursor/Claude.
+
+## Estrutura
 
 ```
-.cursor/
-├── agents/                 # Subagentes especializados
-│   ├── backend-sr.md       # C# .NET Developer
-│   ├── frontend-sr.md      # React/Next.js Developer
-│   ├── qa-reviewer.md      # QA Engineer
-│   ├── po-product.md       # Product Owner
-│   └── tech-lead.md        # Tech Lead (Orquestrador)
-├── skills/                 # Skills reutilizáveis
-├── rules/                  # Regras de workflow
-│   └── workflow.md        # Processos do time
-├── workspace.json         # Configuração do workspace
-└── README.md              # Este arquivo
+.agents/skills/
+├── engineering/   # skills de desenvolvimento
+├── portfolio/     # carreira, CV, LinkedIn, portfólio
+├── job-related/   # emprego atual
+└── deprecated/    # arquivo histórico — agentes devem ignorar
 ```
 
-### Descrição dos Agents
+Cada categoria tem um `README.md` explicando o propósito. Skills ativas têm um `SKILL.md` na pasta da skill.
 
-| Agent | Especialidade | Contexto |
-|-------|---------------|----------|
-| `backend-sr` | C# .NET, APIs, EF Core, RabbitMQ | `server/` |
-| `frontend-sr` | React, Next.js 14, TypeScript, Tailwind | `client/` |
-| `qa-reviewer` | Testes, Code Review, Segurança | Todos |
-| `po-product` | PRDs, ClickUp, Slack, Backlog | Todos |
-| `tech-lead` | Orquestração, Arquitetura, PRs | Todos |
+## Categorias
 
+| Categoria | O que tem |
+| --- | --- |
+| [engineering](.agents/skills/engineering/) | Code review, spec-driven, grilling, autofix… |
+| [portfolio](.agents/skills/portfolio/) | `agentic-career`, `git-commits-to-cv` |
+| [job-related](.agents/skills/job-related/) | Skills do dia a dia no emprego |
+| [deprecated](.agents/skills/deprecated/) | Skills antigas (não usar) |
 
-### Skills Principais
+## Como os agentes devem se comportar
 
-| Skill | Descrição | Quando usar |
-|-------|-----------|-------------|
-| `jobs-to-be-done` | Resumo diário de tasks e PRs | Início do dia |
-| `create-pr` | Criar PRs padronizados | Ao terminar feature |
-| `clickup-sync` | Sincronizar ClickUp com GitHub | Durante workflow |
-| `design-an-interface` | Gerar múltiplos designs de interface | Projetar APIs ou componentes |
-| `grill-me` | Challenge de requisitos | Antes de decisões importantes |
-| `improve-front-arch` | Padronizar módulo ao padrão coupons | Refatorar/criar módulos frontend |
-| `to-vertical-slices` | Quebrar plano em issues GitHub | Dividir trabalho em tickets |
-| `triage-issue` | Triagem e classificação de bugs | Analisar novas issues |
-| `write-prd` | Criar novos skills para o time | Desenvolver novas capacidades |
+Ver [AGENTS.md](./AGENTS.md): carregar só skills ativas; **nunca** usar `deprecated/`.
 
-<br />
+## Licença
 
-<div style="text-align: center;">
-  Feito com 🤖💛
-</div>
-
+[MIT](./LICENSE)
