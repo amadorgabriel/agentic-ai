@@ -2,9 +2,9 @@
 
 Domain context for a skill that turns git commit history into durable, per-project experience memory for a CV — without writing the final CV itself.
 
-Skill: `.agents/skills/portfolio/git-commits-to-cv/` (child capability of **Agentic Career**)
+Skill: `.agents/skills/portfolio/git-commits-to-cv/` (sibling of **summarize-cv**)
 
-**Hosting note**: `agentic-ai` hosts skills; this domain context lives at `.agents/skills/portfolio/agentic-career/context/cv-from-commits/CONTEXT.md`. **Experience Memory** is under the **Career Output Root**. Scanned repositories remain git-history input only.
+**Hosting note**: this domain context lives at `.agents/skills/portfolio/git-commits-to-cv/dictionary/cv-from-commits/CONTEXT.md`. **Experience Memory** is under the **Summarize CV Output Root** (`summarize-cv/output/experience/`). Scanned repositories remain git-history input only.
 
 ## Language
 
@@ -14,10 +14,10 @@ _Avoid_: Batch run, multi-repo scan, aggregated pass
 
 **Scanned repository**:
 The one git repository in scope for a **Skill run** — git history input only. Artefacts are never written here by default.
-_Avoid_: Workspace, monorepo aggregate, multi-root folder, Experience Memory, Career Output Root
+_Avoid_: Workspace, monorepo aggregate, multi-root folder, Experience Memory, Summarize CV Output Root
 
 **Experience Memory**:
-Directory under the **Career Output Root** where **Memory artefacts** are written: `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\experience\`.
+Directory under the **Summarize CV Output Root** where **Memory artefacts** are written: `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\`.
 _Avoid_: Portfolio Memory Root, `portfolio/.specs`, scanned repository root, nested `.specs/` inside the scanned repo
 
 **Company slug**:
@@ -57,7 +57,7 @@ Later **Reference Module** step (`summarize-into-doc`, owned at Career context) 
 _Avoid_: Inline CV write by this skill, auto-updating portfolio `current_cv.md`, STAR-into-CV by default, rewriting artefacts to English for the EN master
 
 **Master CV**:
-Canonical working CV in PT-BR under Career Output Root (`output/cv/master_cv.md`). Consolidation write target — not written by this skill. English pair is **Master CV EN** (`master_cv.en.md`) at Career context — also not written by this skill.
+Canonical working CV in PT-BR under Summarize CV Output Root (`output/cv/master_cv.md`). Consolidation write target — not written by this skill. English pair is **Master CV EN** (`master_cv.en.md`) at Career context — also not written by this skill.
 _Avoid_: Portfolio `current_cv.md` as the working draft, expecting this skill to emit EN masters or bilingual artefacts
 
 **Portfolio CV**:
@@ -103,7 +103,7 @@ _Avoid_: Entire repo history by default, unbounded scan without employment or da
 - **Consolidation** reads **XYZ Bullets** from many **Memory artefacts** into the **Master CV** (and may translate them into **Master CV EN**); this skill does not perform **Consolidation** and does not write CV files or the **Portfolio CV**
 - **Experience bullets** (**XYZ Bullets**) live inside a **Hybrid Artefact**, not in the **Master CV** — always PT-BR; EN translation happens only at Consolidation if needed
 - Optional **STAR Notes** live in the same **Hybrid Artefact** for interview prep; they are not consolidated into the **Master CV** by default
-- `agentic-ai` hosts the skill and **Experience Memory** (under **Career Output Root**); scanned repos are git-history input only
+- `agentic-ai` hosts the skill and **Experience Memory** (under **Summarize CV Output Root**); scanned repos are git-history input only
 - A **Skill run** filters commits by **Author Email Allowlist** and **Commit Window**
 
 ## Example dialogue
@@ -118,7 +118,7 @@ _Avoid_: Entire repo history by default, unbounded scan without employment or da
 > **Domain expert:** "Per-project memory stays ATS-friendly per company and keeps commit-derived bullets scoped to the right engagement."
 >
 > **Dev:** "Should memory live next to the scanned repo's commits?"
-> **Domain expert:** "No. Write under **Experience Memory** so all career skills share one root under **Agentic Career**."
+> **Domain expert:** "No. Write under **Experience Memory** in the **Summarize CV Output Root** so CV siblings share one experience store."
 >
 > **Dev:** "If I re-run and the artefact already has confirmed metrics, what happens?"
 > **Domain expert:** "**Smart Merge** — update from new evidence, keep confirmed metrics and STAR, ask only when ambiguous."
@@ -134,16 +134,16 @@ _Avoid_: Entire repo history by default, unbounded scan without employment or da
 - ~~**Skill auto-invocation policy**~~ — **resolved** (see Resolved decisions #11): explicit invocation only; do not auto-run on casual CV/portfolio talk.
 - ~~**Bullet count / date range**~~ — **resolved** (see Resolved decisions #12): default **5–8 XYZ Bullets**; **Commit Window** = employment period or user-provided `--since` / date range.
 - ~~**Re-run merge policy**~~ — **resolved** (see Resolved decisions #13): **Smart Merge**.
-- ~~**Consolidation path**~~ — **resolved** at Career context (decision 9): **Master CV** under Career Output Root; this skill still never writes CV files.
+- ~~**Consolidation path**~~ — **resolved** at Career context (decision 9): **Master CV** under Summarize CV Output Root; this skill still never writes CV files.
 - ~~**Artefact Source for this skill**~~ — **resolved** (see Resolved decisions #15): `source: git`; Career Inbox / append-data uses other values.
 
 ## Resolved decisions
 
 1. **Execution scope**: one git repository per **Skill run**; do not aggregate multiple repos.
-2. **Memory artefact path pattern**: `experience/<company-slug>/<project-slug>.md` under **Career Output Root** — one artefact per project.
+2. **Memory artefact path pattern**: `experience/<company-slug>/<project-slug>.md` under **Summarize CV Output Root** — one artefact per project.
 3. **Consolidation boundary**: this skill does not write the **Master CV** or **Portfolio CV**; **Consolidation** (`summarize-into-doc`) is a later Career Reference Module that reads **XYZ Bullets** → **Master CV** only.
 4. **Rationale**: avoid mixed contexts; ATS-friendly per company; stronger per-project memory.
-5. **Memory artefact root**: **Experience Memory** at `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\experience\`. Full path pattern: `…\experience\<company-slug>\<project-slug>.md`. Scanned repos are git-history input; they are not the write target. (Supersedes the former **Portfolio Memory Root** at `portfolio/.specs/`.)
+5. **Memory artefact root**: **Experience Memory** at `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\`. Full path pattern: `…\experience\<company-slug>\<project-slug>.md`. Scanned repos are git-history input; they are not the write target. (Supersedes the former **Portfolio Memory Root** at `portfolio/.specs/`.)
 6. **Bullet format = Hybrid**: Final CV-ready bullets are **XYZ Bullets** (Google XYZ: “Accomplished X as measured by Y by doing Z”). The same **Hybrid Artefact** may also include optional **STAR Notes** (Situation, Task, Action, Result) per achievement for interview prep. Do not put long STAR prose into the **Master CV** by default — only **XYZ Bullets** consolidate into the **Master CV**.
 7. **Artefact language = PT-BR only**: **Memory artefacts** (XYZ Bullets and STAR Notes) are written in Brazilian Portuguese. No bilingual sections; no EN flag in v1 of the skill. Unchanged by Career **CV Language Policy (dual-track)** (Career Resolved decision 16): **Master CV EN** is produced at Consolidation by translating XYZ — this skill never rewrites artefacts into English.
 8. **Author identity filter = hybrid**: Commits count as "self" only if the author email is on the **Author Email Allowlist**. Defaults: `gabrielramador2014@gmail.com`, `gabriel.amador@spott.eco`, `amadorgabriel.dev@gmail.com`, `gabriel.amador@etiquetacerta.com`. Each **Skill run** discovers emails that appear as commit authors/collaborators in the **Scanned repository** (e.g. `git log --format` / shortlog). Newly discovered emails (not in defaults / prior-run config) are **Discovered Collaborator Emails** — present them and **ask the user** whether to include for this run. Per-run override/exclude is allowed.

@@ -2,21 +2,21 @@
 
 **Reference Module** (não é skill standalone). Escreve/atualiza o **Goals Artefact** em `output/goals.md` via autoquestionamento + **Smart Merge**.
 
-Fonte de decisões: [context/career/CONTEXT.md](../context/career/CONTEXT.md) (Resolved 10, 11). Defaults de glossário: **Target Role**, **Location Preference**, **Comp Floor**.
+Fonte de decisões: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Resolved 10, 11). Defaults de glossário: **Target Role**, **Location Preference**, **Comp Floor**.
 
 ## Quando rodar
 
 - Usuário pede intake / “definir objetivos” / “atualizar goals”
 - **Pipeline A** passo 1 quando `output/goals.md` falta (**Soft Gate** — oferecer; pode continuar sem)
-- Antes de um **Hard Gate** (`adapt-cv-to-job`, `optimize-linkedin-profile`) — Phase 2; nesta Phase 1 só preparar o artefacto
+- Antes de um **Hard Gate** (`adapt-cv-to-job`, sibling `optimize-linkedin`) — preparar/exigir o artefacto
 
 ## Path de saída
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\goals.md
+c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\goals.md
 ```
 
-Não inventar stub antes do intake. Não gravar respostas live em `context/career/CONTEXT.md`.
+Não inventar stub antes do intake. Não gravar respostas live em `dictionary/cv/CONTEXT.md`.
 
 ## Checklist rápido
 
@@ -70,7 +70,7 @@ Quando `goals.md` **já existe**:
 | --- | --- |
 | Apagar goals confirmados | Merge campo a campo |
 | Inventar constraints/posicionamento | Deixar vazio ou perguntar |
-| Espelhar glossário em `context/career/CONTEXT.md` | Só em `output/goals.md` |
+| Espelhar glossário em `dictionary/cv/CONTEXT.md` | Só em `output/goals.md` |
 | Criar stub vazio “para depois” | Só escrever após pelo menos um turno de intake |
 
 ## Template de saída
@@ -85,7 +85,7 @@ Quando `goals.md` **já existe**:
 | created_at | `<ISO-8601 UTC>` |
 | updated_at | `<ISO-8601 UTC>` |
 | política | Smart Merge |
-| glossário de referência | context/career/CONTEXT.md — Target Role / Location Preference / Comp Floor |
+| glossário de referência | dictionary/cv/CONTEXT.md — Target Role / Location Preference / Comp Floor |
 
 ## Objetivos confirmados
 

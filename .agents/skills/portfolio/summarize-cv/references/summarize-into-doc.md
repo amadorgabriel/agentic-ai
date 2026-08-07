@@ -2,7 +2,7 @@
 
 **Reference Module** (não é skill standalone). **Consolidation**: lê **XYZ Bullets** de **Experience Memory** (+ **Goals Artefact** como Soft Gate) e escreve **Master CV** PT + **Master CV EN**.
 
-Fonte: [context/career/CONTEXT.md](../context/career/CONTEXT.md) (Resolved 9, 16). Não escreve **Portfolio CV**.
+Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Resolved 9, 16). Não escreve **Portfolio CV**.
 
 ## Quando rodar
 
@@ -14,16 +14,16 @@ Fonte: [context/career/CONTEXT.md](../context/career/CONTEXT.md) (Resolved 9, 16
 
 | Artefacto | Path |
 | --- | --- |
-| Master CV (PT) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\cv\master_cv.md` |
-| Master CV EN | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\cv\master_cv.en.md` |
-| Experience Memory (read) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\experience\**\*.md` |
-| Goals (read, soft) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\goals.md` |
+| Master CV (PT) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\cv\master_cv.md` |
+| Master CV EN | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\cv\master_cv.en.md` |
+| Experience Memory (read) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\**\*.md` |
+| Goals (read, soft) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\goals.md` |
 
 ### NUNCA escrever
 
 - `c:\_git\projects\portfolio\public\assets\pdf\current_cv.md` (**Portfolio CV**)
 - Hybrid Artefacts em inglês / reescrever `experience/` para EN
-- Tailored CVs (`master_cv.<job-slug>.md`) — isso é `adapt-cv-to-job` (Phase 2)
+- Tailored CVs (`master_cv.<job-slug>.md`) — isso é [adapt-cv-to-job.md](adapt-cv-to-job.md)
 - Raw inbox como se fosse experiência canônica
 
 ## Checklist rápido
@@ -131,7 +131,7 @@ Entregar ao usuário:
 - Contagem de bullets / empresas incluídas
 - Lista de métricas ainda placeholder
 - Lembrete: sync para Portfolio CV = futuro **publish-cv** (fora de escopo)
-- Phase 2: `adapt-cv-to-job` para variantes por vaga
+- Adapt à vaga: [adapt-cv-to-job.md](adapt-cv-to-job.md)
 
 ## Hard rules
 

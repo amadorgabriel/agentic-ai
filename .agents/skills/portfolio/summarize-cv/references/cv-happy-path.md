@@ -1,12 +1,16 @@
 # cv-happy-path — Pipeline A (orquestração)
 
-Helper opcional da skill-mãe. Orquestra o **CV Happy Path** (**Pipeline A**) com Soft Gate em goals e **Heavy-step Confirmation** antes de git scan e rewrite do Master.
+Helper de **summarize-cv**. Orquestra o **CV Happy Path** (**Pipeline A**) com Soft Gate em goals e **Heavy-step Confirmation** antes de git scan e rewrite do Master.
 
-Fonte: [context/career/CONTEXT.md](../context/career/CONTEXT.md) Resolved decision 17–18. Entrada principal: [SKILL.md](../SKILL.md).
+Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) Resolved decision 17–19. Entrada principal: [SKILL.md](../SKILL.md).
 
 ## Quando usar
 
-Intent claro de otimizar / montar / refrescar CV (“otimizar currículo”, “optimize CV”, “gerar master CV”, …). Se intent for LinkedIn/estudo/empresas/vaga específica → **não** use este path; volte ao Menu C na skill-mãe.
+Intent claro de otimizar / montar / refrescar CV (“otimizar currículo”, “optimize CV”, “gerar master CV”, …).
+
+- Vaga específica → [adapt-cv-to-job.md](adapt-cv-to-job.md) (não este path sozinho).
+- LinkedIn → skill irmã `optimize-linkedin` (não executar aqui).
+- Estudo/empresas → skill irmã `study-planning` (não executar aqui).
 
 ## Sequência
 
@@ -54,4 +58,4 @@ c:\_git\projects\agentic-ai\.agents\skills\portfolio\git-commits-to-cv\SKILL.md
 
 ## Encerrar o Happy Path
 
-Resumir o que rodou, paths tocados, passos pulados, e itens abertos (goals checklist, métricas placeholder). Mencionar Phase 2 só se o usuário pedir adapt-por-vaga / LinkedIn / study / companies.
+Resumir o que rodou, paths tocados, passos pulados, e itens abertos (goals checklist, métricas placeholder). Se pedirem LinkedIn/estudo/empresas → apontar `optimize-linkedin` / `study-planning`. Adapt à vaga → [adapt-cv-to-job.md](adapt-cv-to-job.md).

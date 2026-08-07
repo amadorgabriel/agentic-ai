@@ -2,10 +2,11 @@
 name: git-commits-to-cv
 description: >-
   Gera bullets de experiência de CV (XYZ + STAR) a partir do histórico de commits
-  de um repositório git e grava um Memory artefact em Experience Memory (Agentic
-  Career). Use when the user asks to gerar bullets de experiência do CV a partir
-  de commits, commits → experiência, STAR/XYZ do repo X, extrair conquistas do
-  git para o currículo, or explicitly invokes git-commits-to-cv.
+  de um repositório git e grava um Memory artefact em Experience Memory
+  (summarize-cv/output/experience). Use when the user asks to gerar bullets de
+  experiência do CV a partir de commits, commits → experiência, STAR/XYZ do
+  repo X, extrair conquistas do git para o currículo, or explicitly invokes
+  git-commits-to-cv.
 disable-model-invocation: true
 ---
 
@@ -13,9 +14,9 @@ disable-model-invocation: true
 
 Turn one **Scanned repository** into a **Hybrid Artefact** (XYZ bullets + STAR notes) under **Experience Memory**. Does **not** write `current_cv.md`.
 
-Domain source of truth: [agentic-career/context/cv-from-commits/CONTEXT.md](../agentic-career/context/cv-from-commits/CONTEXT.md) (see also [CONTEXT-MAP.md](../agentic-career/context/CONTEXT-MAP.md)). Do not invent decisions beyond it.
+Domain source of truth: [dictionary/cv-from-commits/CONTEXT.md](dictionary/cv-from-commits/CONTEXT.md) (see also [summarize-cv CONTEXT-MAP](../summarize-cv/dictionary/CONTEXT-MAP.md)). Do not invent decisions beyond it.
 
-Child capability of **Agentic Career** (`agentic-career`). Categoria: **career** — ver [README da categoria](../README.md).
+Sibling of **`summarize-cv`**. Categoria: **portfolio** — ver [README da categoria](../README.md).
 
 ## When to run
 
@@ -49,7 +50,7 @@ Skill run progress:
 **Output path** (create dirs as needed):
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\experience\<company-slug>\<project-slug>.md
+c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\<company-slug>\<project-slug>.md
 ```
 
 Never write into the scanned repo. Never write `current_cv.md`. Do not write to `portfolio/.specs/` (migrated).

@@ -1,6 +1,6 @@
 # Workflow detalhado — git-commits-to-cv
 
-Expandir estes passos quando o `SKILL.md` não bastar. Fonte de decisões: [agentic-career/context/cv-from-commits/CONTEXT.md](../../agentic-career/context/cv-from-commits/CONTEXT.md).
+Expandir estes passos quando o `SKILL.md` não bastar. Fonte de decisões: [../dictionary/cv-from-commits/CONTEXT.md](../dictionary/cv-from-commits/CONTEXT.md).
 
 ## 1. Coletar inputs
 
@@ -21,7 +21,7 @@ git -C "<repo-path>" rev-parse --is-inside-work-tree
 Definir path de saída:
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\experience\<company-slug>\<project-slug>.md
+c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\<company-slug>\<project-slug>.md
 ```
 
 Se o arquivo já existir → planejar **Smart Merge** (seção 6). Caso contrário → criação limpa a partir do template.
@@ -111,7 +111,7 @@ Guardar amostra de hashes por tema para a seção de evidência.
 2. Preencher [artefact-template.md](artefact-template.md).
 3. Toda métrica sem evidência → `[MÉTRICA A CONFIRMAR]` + item no Validation Checklist.
 4. Perguntar Y interativamente **só** para bullets de topo sem medida.
-5. Criar diretórios sob `agentic-career/output/experience/<company-slug>/` se necessário.
+5. Criar diretórios sob `summarize-cv/output/experience/<company-slug>/` se necessário.
 6. Escrever o arquivo `.md`.
 
 **Não** editar `current_cv.md`. **Não** criar skill de Consolidation nesta run.

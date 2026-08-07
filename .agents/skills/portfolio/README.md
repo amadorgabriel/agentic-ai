@@ -1,12 +1,14 @@
 # portfolio
 
-Skills de **carreira e portfólio**: currículo, experiência a partir de commits, LinkedIn e orquestração do reposicionamento profissional.
+Skills de **carreira e portfólio**: currículo, experiência a partir de commits, LinkedIn e planejamento de estudos.
 
-Memória compartilhada (outputs pessoais) fica em `agentic-career/output/` — gitignored, exceto READMEs de estrutura.
+Outputs pessoais ficam no `output/` de cada skill — gitignored.
 
 ## Skills
 
 | Skill | Papel |
 | --- | --- |
-| `agentic-career` | Skill-mãe: orquestra CV Happy Path e menu de carreira |
-| `git-commits-to-cv` | Extrai bullets XYZ/STAR do histórico git → Experience Memory |
+| `summarize-cv` | Pipeline CV: goals → inbox/experience → masters → adapt à vaga |
+| `git-commits-to-cv` | Commits → Hybrid Artefacts em `summarize-cv/output/experience/` |
+| `optimize-linkedin` | Perfil LinkedIn + post ideas (stub) |
+| `study-planning` | Company shortlists + study plan (stub) |

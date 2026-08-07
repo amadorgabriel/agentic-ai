@@ -1,6 +1,6 @@
 # Métodos — XYZ e STAR (PT-BR, ATS)
 
-Orientação para escrever o **Hybrid Artefact**. Alinhado a [agentic-career/context/cv-from-commits/CONTEXT.md](../../agentic-career/context/cv-from-commits/CONTEXT.md). Não inventar trabalho nem métricas.
+Orientação para escrever o **Hybrid Artefact**. Alinhado a [dictionary/cv-from-commits/CONTEXT.md](../dictionary/cv-from-commits/CONTEXT.md). Não inventar trabalho nem métricas.
 
 ## XYZ (camada CV)
 

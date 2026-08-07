@@ -2,7 +2,7 @@
 
 **Reference Module** (não é skill standalone). Aterra material bruto no **Career Inbox**, normaliza em **Hybrid Artefacts** sob **Experience Memory**, com **Artefact Source** `manual` \| `cv-import` \| `doc`.
 
-Fonte: [context/career/CONTEXT.md](../context/career/CONTEXT.md) (Resolved 12). Template de artefacto: [git-commits-to-cv/references/artefact-template.md](../../git-commits-to-cv/references/artefact-template.md). Métodos XYZ/STAR: [git-commits-to-cv/references/methods.md](../../git-commits-to-cv/references/methods.md).
+Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Resolved 12). Template de artefacto: [git-commits-to-cv/references/artefact-template.md](../../git-commits-to-cv/references/artefact-template.md). Métodos XYZ/STAR: [git-commits-to-cv/references/methods.md](../../git-commits-to-cv/references/methods.md).
 
 ## Quando rodar
 
@@ -14,10 +14,10 @@ Fonte: [context/career/CONTEXT.md](../context/career/CONTEXT.md) (Resolved 12). 
 
 | Papel | Path |
 | --- | --- |
-| Career Inbox (raw) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\inbox\` |
-| Experience Memory | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\agentic-career\output\experience\<company-slug>\<project-slug>.md` |
+| Career Inbox (raw) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\inbox\` |
+| Experience Memory | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\<company-slug>\<project-slug>.md` |
 
-Inbox é **gitignored** (PII) — só `inbox/README.md` versionado. Nunca tratar inbox como experiência canônica para Consolidation.
+Inbox é **gitignored** (PII). Nunca tratar inbox como experiência canônica para Consolidation.
 
 ## Checklist rápido
 
@@ -63,7 +63,7 @@ notes: …
 ---
 ```
 
-**Não** normalizar LinkedIn Profile Snapshot neste módulo na Phase 1 (Phase 2 / ownership TBD). Se o material for claramente perfil LinkedIn, aterrar no inbox e avisar que Snapshot (`output/linkedin/profile.md`) é fluxo Phase 2 — não inventar `profile.md` completo aqui salvo pedido explícito futuro.
+**Não** normalizar LinkedIn Profile Snapshot neste módulo. Se o material for claramente perfil LinkedIn, aterrar no inbox e apontar para a skill irmã **`optimize-linkedin`** (`optimize-linkedin/output/profile.md`) — não inventar Snapshot completo aqui.
 
 ## Passo 3 — Escolher Artefact Source
 

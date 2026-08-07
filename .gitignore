@@ -10,8 +10,7 @@
 .agents/skills/job-related/**/
 
 
-# Career personal outputs — keep only README structure placeholders tracked
-# (un-ignore directories so nested README.md negation can apply)
-.agents/skills/portfolio/agentic-career/output/**
-!.agents/skills/portfolio/agentic-career/output/**/
-!.agents/skills/portfolio/agentic-career/output/**/README.md
+# Portfolio personal outputs (gitignored; no README placeholders required)
+.agents/skills/portfolio/summarize-cv/output/**
+.agents/skills/portfolio/optimize-linkedin/output/**
+.agents/skills/portfolio/study-planning/output/**
