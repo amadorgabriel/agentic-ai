@@ -40,7 +40,7 @@ Example mapping:
 
 | Windows path | WSL path |
 | --- | --- |
-| `c:\_git\job\spott\spott-client-cms` | `/mnt/c/_git/job/spott/spott-client-cms` |
+| `c:\path\to\your-project` | `/mnt/c/path/to/your-project` |
 
 Confirm the directory is a git repo (from Windows or WSL):
 
@@ -89,10 +89,10 @@ Data handling: the CLI sends code diffs to the CodeRabbit API for analysis. Befo
 wsl -d Ubuntu -- bash -lc 'cd <wsl-project-path> && coderabbit review --agent --base <base-branch>'
 ```
 
-Concrete example (`spott-client-cms` vs `epic/cms2`):
+Concrete example (`my-app` vs `main`):
 
 ```powershell
-wsl -d Ubuntu -- bash -lc 'cd /mnt/c/_git/job/spott/spott-client-cms && coderabbit review --agent --base epic/cms2'
+wsl -d Ubuntu -- bash -lc 'cd /mnt/c/path/to/your-project && coderabbit review --agent --base main'
 ```
 
 Append extra flags inside the same `bash -lc` string when needed (`-t uncommitted`, `--base-commit`, etc.):

@@ -50,21 +50,18 @@ Skill run progress:
 **Output path** (create dirs as needed):
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\<company-slug>\<project-slug>.md
+.agents/skills/portfolio/summarize-cv/output/experience/<company-slug>/<project-slug>.md
 ```
 
 Never write into the scanned repo. Never write `current_cv.md`. Do not write to `portfolio/.specs/` (migrated).
 
 ## Step 2 — Author filter
 
-**Default allowlist:**
+**Author Email Allowlist** (required — no baked-in defaults):
 
-- `gabrielramador2014@gmail.com`
-- `gabriel.amador@spott.eco`
-- `amadorgabriel.dev@gmail.com`
-- `gabriel.amador@etiquetacerta.com`
+Ask the user for the email(s) that count as "self" for this run, or read a local config under `portfolio/_/` (gitignored). Typical sources: `git config user.email`, commit history, or a prior artefact's metadata.
 
-**Discover** distinct author emails in the scanned repo, then ask about any **not** already on the allowlist (or prior-run config) before gathering commits. Per-run include/exclude is allowed.
+**Discover** distinct author emails in the scanned repo, then ask about any **not** already on the allowlist before gathering commits. Per-run include/exclude is allowed.
 
 ```bash
 # From scanned repo root — portable
@@ -83,16 +80,14 @@ Filter by final allowlist **and** Commit Window. Group into themes/achievements 
 Prefer meaningful clusters: features, migrations, perf, infra, APIs, auth, data, FE ownership (aligned with Target Role Bias without inventing work).
 
 ```bash
-# Example: allowlist + since (repeat --author as needed)
+# Example: allowlist + since (repeat --author for each email on the allowlist)
 git log --since='2024-01-01' --until='2025-12-31' \
-  --author='gabrielramador2014@gmail.com' \
-  --author='gabriel.amador@spott.eco' \
-  --author='amadorgabriel.dev@gmail.com' \
-  --author='gabriel.amador@etiquetacerta.com' \
+  --author='you@example.com' \
+  --author='you@work.example.com' \
   --pretty=format:'%h|%ad|%ae|%s' --date=short
 
 # Optional: denser signal for a theme
-git log --since='2024-01-01' --author='amadorgabriel.dev@gmail.com' --oneline --grep='auth'
+git log --since='2024-01-01' --author='you@example.com' --oneline --grep='auth'
 ```
 
 Detailed clustering heuristics → [references/workflow.md](references/workflow.md).

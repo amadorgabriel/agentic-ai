@@ -17,7 +17,7 @@ The one git repository in scope for a **Skill run** — git history input only. 
 _Avoid_: Workspace, monorepo aggregate, multi-root folder, Experience Memory, Summarize CV Output Root
 
 **Experience Memory**:
-Directory under the **Summarize CV Output Root** where **Memory artefacts** are written: `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\`.
+Directory under the **Summarize CV Output Root** where **Memory artefacts** are written: `.agents/skills/portfolio/summarize-cv/output/experience/`.
 _Avoid_: Portfolio Memory Root, `portfolio/.specs`, scanned repository root, nested `.specs/` inside the scanned repo
 
 **Company slug**:
@@ -73,8 +73,12 @@ An email that appears as commit author/collaborator in the **Scanned repository*
 _Avoid_: Default allowlist email, automatic include without confirmation
 
 **Metric Placeholder**:
-Literal marker `[MÉTRICA A CONFIRMAR]` used in an **XYZ Bullet** when the Y (measure) lacks evidence in git/PRs/docs. Never invent a number to fill Y.
+Literal marker `[MÉTRICA A CONFIRMAR]` used in an **XYZ Bullet** when the Y (measure) lacks evidence in the **Confirmed Metrics Ledger**, git/PRs, or docs. Never invent a number to fill Y.
 _Avoid_: Fabricated metric, guessed percentage, invented latency/throughput figure
+
+**Confirmed Metrics Ledger**:
+`summarize-cv/output/cv/confirmed_metrics.md` — source of truth for confirmed CV numbers, imported from the PT CV (`cv-import`). Check it **before** writing a **Metric Placeholder**; it wins over artefact notes, append-notes, and LinkedIn when numbers conflict. An achievement absent from the ledger is written qualitatively, not with a dangling placeholder.
+_Avoid_: Propagating an artefact number that contradicts the ledger, leaving a placeholder for a metric the ledger already confirms
 
 **Validation Checklist**:
 Artefact section listing items the user must confirm before treating metrics (or other unverified claims) as final — especially any **Metric Placeholder** and interactively proposed numbers.
@@ -143,14 +147,14 @@ _Avoid_: Entire repo history by default, unbounded scan without employment or da
 2. **Memory artefact path pattern**: `experience/<company-slug>/<project-slug>.md` under **Summarize CV Output Root** — one artefact per project.
 3. **Consolidation boundary**: this skill does not write the **Master CV** or **Portfolio CV**; **Consolidation** (`summarize-into-doc`) is a later Career Reference Module that reads **XYZ Bullets** → **Master CV** only.
 4. **Rationale**: avoid mixed contexts; ATS-friendly per company; stronger per-project memory.
-5. **Memory artefact root**: **Experience Memory** at `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\`. Full path pattern: `…\experience\<company-slug>\<project-slug>.md`. Scanned repos are git-history input; they are not the write target. (Supersedes the former **Portfolio Memory Root** at `portfolio/.specs/`.)
+5. **Memory artefact root**: **Experience Memory** at `.agents/skills/portfolio/summarize-cv/output/experience/`. Full path pattern: `…/experience/<company-slug>/<project-slug>.md`. Scanned repos are git-history input; they are not the write target. (Supersedes the former **Portfolio Memory Root** at `<portfolio-repo>/.specs/`.)
 6. **Bullet format = Hybrid**: Final CV-ready bullets are **XYZ Bullets** (Google XYZ: “Accomplished X as measured by Y by doing Z”). The same **Hybrid Artefact** may also include optional **STAR Notes** (Situation, Task, Action, Result) per achievement for interview prep. Do not put long STAR prose into the **Master CV** by default — only **XYZ Bullets** consolidate into the **Master CV**.
 7. **Artefact language = PT-BR only**: **Memory artefacts** (XYZ Bullets and STAR Notes) are written in Brazilian Portuguese. No bilingual sections; no EN flag in v1 of the skill. Unchanged by Career **CV Language Policy (dual-track)** (Career Resolved decision 16): **Master CV EN** is produced at Consolidation by translating XYZ — this skill never rewrites artefacts into English.
-8. **Author identity filter = hybrid**: Commits count as "self" only if the author email is on the **Author Email Allowlist**. Defaults: `gabrielramador2014@gmail.com`, `gabriel.amador@spott.eco`, `amadorgabriel.dev@gmail.com`, `gabriel.amador@etiquetacerta.com`. Each **Skill run** discovers emails that appear as commit authors/collaborators in the **Scanned repository** (e.g. `git log --format` / shortlog). Newly discovered emails (not in defaults / prior-run config) are **Discovered Collaborator Emails** — present them and **ask the user** whether to include for this run. Per-run override/exclude is allowed.
+8. **Author identity filter = hybrid**: Commits count as "self" only if the author email is on the **Author Email Allowlist** (user-provided each run or via local config under `portfolio/_/` — no baked-in defaults in the repo). Each **Skill run** discovers emails that appear as commit authors/collaborators in the **Scanned repository** (e.g. `git log --format` / shortlog). Newly discovered emails (not on the allowlist / prior-run config) are **Discovered Collaborator Emails** — present them and **ask the user** whether to include for this run. Per-run override/exclude is allowed.
 9. **Metric honesty**: NEVER invent metrics. When Y (measure) in an **XYZ Bullet** lacks evidence in git/PRs/docs, use the **Metric Placeholder** `[MÉTRICA A CONFIRMAR]`. Each **Memory artefact** includes a **Validation Checklist** of items the user must confirm. For top/high-value bullets only: if a strong achievement lacks a number, ask the user interactively during the run. Weaker bullets: omit fabricated Y or use the placeholder without interrupting.
 10. **Target Role Bias**: Configurable per **Skill run**. Default: Fullstack Engineer Pleno (~5 years experience) — when summarizing commits, prioritize and phrase evidence that supports full-stack ownership (API, data, auth, cloud, FE) without inventing work that is not in the git history. Other allowed modes: neutral, Frontend Pleno.
 11. **Skill invocation = explicit only**: The skill must set `disable-model-invocation: true`. It runs only when the user explicitly asks — e.g. generate CV experience from a repo, commits → experience bullets, or STAR/XYZ from project X. Do **not** auto-run when the user is casually discussing CV/portfolio.
 12. **Default output count + Commit Window**: Produce **5–8 XYZ Bullets** (top achievements, not one-per-commit). **Commit Window** defaults to the employment period for that project/company; if the user provides `--since` or an explicit date range, use that instead.
 13. **Re-run = Smart Merge**: If the **Memory artefact** already exists, **Smart Merge** — update bullets from new evidence; preserve user-confirmed metrics and **STAR Notes**; ask the user only when the merge is ambiguous.
-14. **Migration from portfolio/.specs (Decision A)**: Existing Hybrid Artefacts were migrated from `C:\_git\projects\portfolio\.specs\` into **Experience Memory**, preserving company/project relative paths. Local Hybrid Artefact `.md` duplicates under `portfolio/.specs/` were then **deleted by design** (only `README.md` migration pointer remains) so the sole canonical store is **Experience Memory** — no dual copies / drift. New runs must write only to **Experience Memory**.
+14. **Migration from portfolio/.specs (Decision A)**: Existing Hybrid Artefacts were migrated from `<portfolio-repo>/.specs/` into **Experience Memory**, preserving company/project relative paths. Local Hybrid Artefact `.md` duplicates under `portfolio/.specs/` were then **deleted by design** (only `README.md` migration pointer remains) so the sole canonical store is **Experience Memory** — no dual copies / drift. New runs must write only to **Experience Memory**.
 15. **Artefact Source on commit-derived artefacts** = `git`. Aligns with Career Resolved decision 12 (`append-data-to-cv` storage = B): Hybrid Artefact template metadata field `source` is `git` \| `manual` \| `cv-import` \| `doc`. This skill only writes `git`; it does not use **Career Inbox**.

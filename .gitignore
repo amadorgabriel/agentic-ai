@@ -1,5 +1,6 @@
 # Current job related files (local-only; not part of the public showcase)
 .agents/skills/_
+.agents/skills/portfolio/_/**
 .agents/rules/_
 .agents/agents/_
 .agents/agents/spott-*.md
@@ -14,3 +15,8 @@
 .agents/skills/portfolio/summarize-cv/output/**
 .agents/skills/portfolio/optimize-linkedin/output/**
 .agents/skills/portfolio/study-planning/output/**
+.agents/skills/portfolio/cv-md-to-docx/assets/*.docx
+
+# Python bytecode
+**/__pycache__/
+**/*.pyc

@@ -8,12 +8,12 @@ Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Resolved 14, 19)
 
 | Artefact | Path |
 | --- | --- |
-| Master CV (PT) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\cv\master_cv.md` |
-| Master CV EN | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\cv\master_cv.en.md` |
-| Tailored CV | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\cv\master_cv.<job-slug>.md` |
-| Experience Memory | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\**\*.md` |
-| Goals | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\goals.md` |
-| Career Inbox (JD) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\inbox\` |
+| Master CV (PT) | `.agents/skills/portfolio/summarize-cv/output/cv/master_cv.md` |
+| Master CV EN | `.agents/skills/portfolio/summarize-cv/output/cv/master_cv.en.md` |
+| Tailored CV | `.agents/skills/portfolio/summarize-cv/output/cv/master_cv.<job-slug>.md` |
+| Experience Memory | `.agents/skills/portfolio/summarize-cv/output/experience/**/*.md` |
+| Goals | `.agents/skills/portfolio/summarize-cv/output/goals.md` |
+| Career Inbox (JD) | `.agents/skills/portfolio/summarize-cv/output/inbox/` |
 
 ## Preconditions
 
@@ -35,7 +35,7 @@ Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Resolved 14, 19)
 1. **Load goals** — confirm Target Role / constraints still apply; note positioning.
 2. **Parse JD** — extract: title, must-have skills, nice-to-haves, seniority signals, domain keywords, language.
 3. **Choose base master** — PT JD → `master_cv.md`; EN JD → prefer `master_cv.en.md`, else translate/adapt from PT.
-4. **Select evidence** — from Experience Memory XYZ bullets (and masters), prioritize bullets that match must-haves; keep honesty (no invented metrics; keep `[MÉTRICA A CONFIRMAR]` if present).
+4. **Select evidence** — from Experience Memory XYZ bullets (and masters), prioritize bullets that match must-haves; keep honesty (no invented metrics; resolve numbers via the **Confirmed Metrics Ledger** at `output/cv/confirmed_metrics.md`, and keep `[MÉTRICA A CONFIRMAR]` only when still unresolved there).
 5. **Rewrite** — produce one Tailored CV:
    - Optional YAML/frontmatter: `job_slug`, `jd_inbox_path`, `generated_at`, `based_on` (master file)
    - Section **JD Summary** (short: role, must-haves, keywords) for later `study-planning`

@@ -6,7 +6,7 @@ Skill: `.agents/skills/portfolio/summarize-cv/`
 
 **Docs home**: `.agents/skills/portfolio/summarize-cv/dictionary/` (see [CONTEXT-MAP.md](../CONTEXT-MAP.md)). Not at the `agentic-ai` repo root. Future CV grilling (`grill-with-docs`) updates `summarize-cv/dictionary/**` only.
 
-Sibling skills (flat — no mother orchestrator): `git-commits-to-cv`, `optimize-linkedin`, `study-planning`.
+Sibling skills (flat — no mother orchestrator): `git-commits-to-cv`, `cv-md-to-docx`, `optimize-linkedin`, `study-planning`.
 
 ## Language
 
@@ -21,11 +21,11 @@ Directory for this skill's user data: `.agents/skills/portfolio/summarize-cv/out
 _Avoid_: Career Output Root (old name), nesting `linkedin/` / `companies/` / `study/` here, scattering CV artefacts per skill without this root
 
 **Experience Memory**:
-Subtree holding Hybrid Artefacts: `output/experience/` (full: `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\`). Canonical for Consolidation and job adaptation.
+Subtree holding Hybrid Artefacts: `output/experience/` (under **Summarize CV Output Root**). Canonical for Consolidation and job adaptation.
 _Avoid_: `portfolio/.specs`, treating **Career Inbox** as Experience Memory
 
 **Career Inbox**:
-Raw landing zone: `output/inbox/` (full: `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\inbox\`). Uploads/pastes/notes **and** raw **Job Description**s. Personal files under the Output Root are gitignored (no README placeholders required).
+Raw landing zone: `output/inbox/` (under **Summarize CV Output Root**). Uploads/pastes/notes **and** raw **Job Description**s. Personal files under the Output Root are gitignored (no README placeholders required).
 _Avoid_: Writing Hybrid Artefacts here, reading inbox as canonical experience, committing raw dumps
 
 **Artefact Source**:
@@ -39,6 +39,10 @@ _Avoid_: Treating **Portfolio CV** as working draft, overwriting Master when ada
 **Master CV EN**:
 English master: `output/cv/master_cv.en.md`. Generated at Consolidation from PT-BR XYZ without rewriting Hybrid Artefacts.
 _Avoid_: Rewriting artefacts into English, inventing EN master before Consolidation
+
+**Confirmed Metrics Ledger**:
+`output/cv/confirmed_metrics.md` — source of truth for confirmed CV numbers, imported from the PT CV PDF (`cv-import`). Every skill that writes a Y (Consolidation, `append-data-to-cv`, `adapt-cv-to-job`, sibling `git-commits-to-cv`) resolves it here first; the ledger wins over artefact notes, append-notes, and LinkedIn on conflicts. Achievements absent from the ledger are written qualitatively — no dangling `[MÉTRICA A CONFIRMAR]`, no invented number.
+_Avoid_: Duplicating the ledger into tracked `dictionary/` files, propagating artefact numbers that contradict it, inventing EN-only figures when translating
 
 **CV Language Policy (dual-track)**:
 Hybrid Artefacts **PT-BR only**; Master PT + Master EN; each **Tailored CV** follows **Job Description** language (filename `master_cv.<job-slug>.md`). LinkedIn language lives in `optimize-linkedin` dictionary.
@@ -61,7 +65,7 @@ Requirements summary embedded in a **Tailored CV** so `study-planning` can work 
 _Avoid_: Dumping full raw JD into Experience Memory
 
 **Portfolio CV**:
-Published site CV: `c:\_git\projects\portfolio\public\assets\pdf\current_cv.md`. Not written by Consolidation.
+Published site CV: `<portfolio-repo>/public/assets/pdf/current_cv.md`. Not written by Consolidation.
 _Avoid_: Using as Consolidation write target
 
 **Consolidation**:
@@ -85,7 +89,7 @@ Reference Module: raw → **Career Inbox** → normalize into **Experience Memor
 _Avoid_: Leaving normalized bullets only in inbox
 
 **Goals Artefact**:
-`output/goals.md` (full: `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\goals.md`). Written by goals-intake via **Smart Merge**.
+`output/goals.md` (under **Summarize CV Output Root**). Written by goals-intake via **Smart Merge**.
 _Avoid_: Putting live goals into this glossary, inventing stub before intake
 
 **Goals Intake Gating**:
@@ -118,13 +122,17 @@ _Avoid_: Silent scans/overwrites
 Sibling skill — commits → Hybrid Artefacts in **Experience Memory**. Dictionary: [cv-from-commits](../../../git-commits-to-cv/dictionary/cv-from-commits/CONTEXT.md).
 _Avoid_: Replacing with a reference-only module
 
+**cv-md-to-docx**:
+Sibling skill — Master/Tailored markdown → send-ready Word `.docx` using local template `cv-md-to-docx/assets/master_cv_pt_template.docx` (gitignored). Writes next to MD under `output/cv/`.
+_Avoid_: Treating Word export as a summarize-cv Reference Module; committing personal `.docx` templates to the public repo
+
 **optimize-linkedin**:
-Sibling skill — profile optimization + post-ideas mode. Owns its `output/` and dictionary. May **read** Summarize CV Output Root. Stub until implemented. See [linkedin CONTEXT](../../../optimize-linkedin/dictionary/linkedin/CONTEXT.md).
-_Avoid_: Running LinkedIn work inside summarize-cv, old slug `optimize-linkedin-profile` as folder name
+Local-only sibling stub under `portfolio/_/` (gitignored) — profile optimization + post-ideas mode. Owns its `output/` and dictionary. May **read** Summarize CV Output Root.
+_Avoid_: Running LinkedIn work inside summarize-cv, committing personal LinkedIn output to the public repo
 
 **study-planning**:
-Sibling skill — **Company Shortlist** + **Study Plan**. Owns `study-planning/output/`. May read Summarize CV Output Root (goals, Tailored CV JD Summary). Stub until implemented.
-_Avoid_: Nesting companies/study under summarize-cv/output
+Local-only sibling stub under `portfolio/_/` (gitignored) — **Company Shortlist** + **Study Plan**. Owns `study-planning/output/`. May read Summarize CV Output Root (goals, Tailored CV JD Summary).
+_Avoid_: Nesting companies/study under summarize-cv/output, committing personal shortlists to the public repo
 
 **adapt-cv-to-job**:
 **Reference Module** (not a sibling skill folder). Reads language-appropriate master + Experience Memory + raw JD (inbox); writes **Tailored CV**. **Hard Gate** on goals.
@@ -153,10 +161,10 @@ Optional future tracker — unresolved; not required.
 
 ## Relationships
 
-- **summarize-cv** owns **Summarize CV Output Root**; siblings may read it; only this skill (+ `git-commits-to-cv` for experience) writes CV/experience/inbox/goals
+- **summarize-cv** owns **Summarize CV Output Root**; siblings may read it; only this skill (+ `git-commits-to-cv` for experience) writes CV/experience/inbox/goals; **cv-md-to-docx** writes `.docx` exports under `output/cv/`
 - **Consolidation** reads Experience Memory — not raw inbox
 - **adapt-cv-to-job** writes Tailored CV alongside masters; embeds **JD Summary** for study-planning
-- LinkedIn / study asks → invoke sibling skills; do not Menu-dispatch execution inside summarize-cv
+- LinkedIn / study / Word-export asks → invoke sibling skills; do not Menu-dispatch execution inside summarize-cv
 - Soft-gated steps may use glossary defaults; hard-gated steps must not
 
 ## Example dialogue
@@ -165,13 +173,13 @@ Optional future tracker — unresolved; not required.
 > **Domain expert:** "**Experience Memory** under **Summarize CV Output Root** — `summarize-cv/output/experience/`."
 >
 > **Dev:** "Is there still a mother skill for LinkedIn and study?"
-> **Domain expert:** "No. Flat siblings: `summarize-cv`, `git-commits-to-cv`, `optimize-linkedin`, `study-planning`."
+> **Domain expert:** "No. Tracked siblings: `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`. LinkedIn/study stubs live locally under `portfolio/_/` (gitignored)."
 >
 > **Dev:** "Does Consolidation update portfolio `current_cv.md`?"
 > **Domain expert:** "No. Only `master_cv.md` + `master_cv.en.md`. Portfolio sync is optional **publish-cv**."
 >
 > **Dev:** "User asks for LinkedIn help while in summarize-cv?"
-> **Domain expert:** "Do not execute. Tell them to invoke `optimize-linkedin`."
+> **Domain expert:** "Do not execute. Tell them to invoke the local stub under `portfolio/_/optimize-linkedin/`."
 >
 > **Dev:** "Where does adapt write, and where is the JD?"
 > **Domain expert:** "`output/cv/master_cv.<job-slug>.md`. Raw JD in **Career Inbox**. Embed **JD Summary** in the Tailored CV."

@@ -13,7 +13,7 @@ Fonte de decisões: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Res
 ## Path de saída
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\goals.md
+.agents/skills/portfolio/summarize-cv/output/goals.md
 ```
 
 Não inventar stub antes do intake. Não gravar respostas live em `dictionary/cv/CONTEXT.md`.

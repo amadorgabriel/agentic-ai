@@ -15,7 +15,7 @@ Fórmula Google XYZ: **conquistou X medido por Y fazendo Z**.
 ### Regras
 
 1. Uma linha por bullet; acionável e escaneável por ATS (verbos fortes no início ou impacto claro).
-2. Preferir evidência em commits/PRs/docs do repo; se Y faltar → `[MÉTRICA A CONFIRMAR]`.
+2. Preferir Y do ledger **Confirmed Metrics**, depois evidência em commits/PRs/docs do repo; se Y faltar em ambos → `[MÉTRICA A CONFIRMAR]`.
 3. **Nunca** inventar percentuais, latência, throughput, headcount ou receita.
 4. Produzir **5–8** bullets de topo (clusters), não um por commit.
 5. Viés de papel (default Fullstack Pleno): priorizar API, dados, auth, cloud e FE **quando constarem** no histórico — sem fabricar ownership.
@@ -63,8 +63,9 @@ Uma nota STAR por conquista relevante (pareada ao bullet XYZ). Não consolida em
 
 ## Métricas e checklist
 
-1. Procurar Y em: mensagens de commit, PRs, CHANGELOG, docs do repo, comentários de review (se acessíveis).
-2. Se não achar: escrever XYZ com `[MÉTRICA A CONFIRMAR]` e adicionar item no checklist.
+1. Procurar Y primeiro no ledger **Confirmed Metrics** (`summarize-cv/output/cv/confirmed_metrics.md`) — ele vence qualquer outra fonte quando houver conflito de número.
+2. Depois em: mensagens de commit, PRs, CHANGELOG, docs do repo, comentários de review (se acessíveis).
+3. Se não achar: escrever XYZ com `[MÉTRICA A CONFIRMAR]` e adicionar item no checklist.
 3. Perguntar interativamente **somente** para bullets de topo/alto valor sem Y.
 4. Bullets mais fracos: placeholder ou omitir Y fabricado — sem interromper o fluxo.
 5. Números que o usuário confirmar na conversa: gravar no artefacto e marcar como confirmados (para Smart Merge preservar).

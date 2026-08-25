@@ -21,19 +21,14 @@ git -C "<repo-path>" rev-parse --is-inside-work-tree
 Definir path de saída:
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\<company-slug>\<project-slug>.md
+.agents/skills/portfolio/summarize-cv/output/experience/<company-slug>/<project-slug>.md
 ```
 
 Se o arquivo já existir → planejar **Smart Merge** (seção 6). Caso contrário → criação limpa a partir do template.
 
 ## 2. Allowlist + discovery
 
-Começar com defaults:
-
-- `gabrielramador2014@gmail.com`
-- `gabriel.amador@spott.eco`
-- `amadorgabriel.dev@gmail.com`
-- `gabriel.amador@etiquetacerta.com`
+Obter a **Author Email Allowlist** do usuário (sem defaults versionados). Se faltar, perguntar antes de continuar — sugerir `git config user.email` e emails do histórico do repo.
 
 Aplicar overrides do usuário (include/exclude) **depois** da discovery.
 
@@ -109,7 +104,7 @@ Guardar amostra de hashes por tema para a seção de evidência.
 
 1. Ler [methods.md](methods.md) e aplicar XYZ + STAR em PT-BR.
 2. Preencher [artefact-template.md](artefact-template.md).
-3. Toda métrica sem evidência → `[MÉTRICA A CONFIRMAR]` + item no Validation Checklist.
+3. Resolver Y pelo ledger **Confirmed Metrics** (`summarize-cv/output/cv/confirmed_metrics.md`) antes de tudo; métrica sem evidência lá nem no repo → `[MÉTRICA A CONFIRMAR]` + item no Validation Checklist.
 4. Perguntar Y interativamente **só** para bullets de topo sem medida.
 5. Criar diretórios sob `summarize-cv/output/experience/<company-slug>/` se necessário.
 6. Escrever o arquivo `.md`.

@@ -14,8 +14,8 @@ Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Resolved 12). Te
 
 | Papel | Path |
 | --- | --- |
-| Career Inbox (raw) | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\inbox\` |
-| Experience Memory | `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\<company-slug>\<project-slug>.md` |
+| Career Inbox (raw) | `.agents/skills/portfolio/summarize-cv/output/inbox/` |
+| Experience Memory | `.agents/skills/portfolio/summarize-cv/output/experience/<company-slug>/<project-slug>.md` |
 
 Inbox é **gitignored** (PII). Nunca tratar inbox como experiência canônica para Consolidation.
 
@@ -48,8 +48,8 @@ YYYY-MM-DD_<kind>_<short-slug>.md
 Exemplos:
 
 - `2026-08-06_cv-import_curriculo-antigo.md`
-- `2026-08-06_doc_spott-case-study.md`
-- `2026-08-06_manual_notas-etiqueta-certa.md`
+- `2026-08-06_doc_case-study-exemplo.md`
+- `2026-08-06_manual_notas-projeto-x.md`
 
 3. Se o usuário colar só no chat: criar o `.md` no inbox com o texto (não deixar só na conversa).
 4. Prefácio curto no topo do raw (opcional):
@@ -63,7 +63,7 @@ notes: …
 ---
 ```
 
-**Não** normalizar LinkedIn Profile Snapshot neste módulo. Se o material for claramente perfil LinkedIn, aterrar no inbox e apontar para a skill irmã **`optimize-linkedin`** (`optimize-linkedin/output/profile.md`) — não inventar Snapshot completo aqui.
+**Não** normalizar LinkedIn Profile Snapshot neste módulo. Se o material for claramente perfil LinkedIn, aterrar no inbox e apontar para o stub local **`portfolio/_/optimize-linkedin`** — não inventar Snapshot completo aqui.
 
 ## Passo 3 — Escolher Artefact Source
 
@@ -82,7 +82,7 @@ notes: …
 3. Extrair **5–8** conquistas de topo (ou menos se a fonte for curta — não inventar para encher).
 4. Redigir **XYZ Bullets** em **PT-BR** (fórmula Google XYZ). Métodos → sibling `methods.md`.
 5. **STAR Notes** opcionais mas recomendadas quando houver contexto suficiente.
-6. Métricas: **NUNCA inventar**. Usar `[MÉTRICA A CONFIRMAR]` + Validation Checklist.
+6. Métricas: **NUNCA inventar**. Resolver Y pelo ledger **Confirmed Metrics** (`output/cv/confirmed_metrics.md`) primeiro; sem entrada lá, usar `[MÉTRICA A CONFIRMAR]` + Validation Checklist.
 7. Preencher o template Hybrid Artefact (sibling `artefact-template.md`) com:
    - `source` = `manual` \| `cv-import` \| `doc`
    - campos git (`Scanned repository`, `Commit Window`, `Emails`) = `N/A` ou omitir
@@ -95,8 +95,8 @@ Um CV antigo costuma gerar **vários** artefactos (um por projeto ou um por empr
 
 ```
 Proposta de artefactos:
-1. etiqueta-certa / ec-v3-ui  (source: cv-import)
-2. spott / spott-server       (source: cv-import)
+1. empresa-a / produto-x  (source: cv-import)
+2. empresa-b / servico-y  (source: cv-import)
 …
 ```
 

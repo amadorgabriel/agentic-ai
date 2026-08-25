@@ -18,8 +18,8 @@ Categoria: **portfolio** — ver [README da categoria](../README.md).
 Sibling skills (invoke separately; do **not** run their work here):
 
 - [`git-commits-to-cv`](../git-commits-to-cv/SKILL.md) — commits → Experience Memory
-- [`optimize-linkedin`](../optimize-linkedin/SKILL.md) — LinkedIn profile / post ideas (deferred stub)
-- [`study-planning`](../study-planning/SKILL.md) — companies + study plan (deferred stub)
+- [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) — Master/Tailored MD → Word `.docx` pronto para envio
+- [`optimize-linkedin`](_/optimize-linkedin/SKILL.md), [`study-planning`](_/study-planning/SKILL.md) — stubs locais em `portfolio/_/` (gitignored; não versionados)
 
 ## Domain sources
 
@@ -40,8 +40,9 @@ Only on **explicit** invoke (`disable-model-invocation: true`).
 | --- | --- |
 | Optimize / build / refresh CV | **CV Happy Path** → **Pipeline A** |
 | Adapt CV to a job / JD | **adapt-cv-to-job** → [references/adapt-cv-to-job.md](references/adapt-cv-to-job.md) |
+| Export CV to Word / DOCX | **Do not execute here** — invoke sibling [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) |
 | goals / append / consolidate / git extract (explicit) | Matching reference module or sibling skill |
-| LinkedIn / study / companies | **Do not execute here** — tell user to invoke `optimize-linkedin` or `study-planning` |
+| LinkedIn / study / companies | **Do not execute here** — tell user to invoke local stubs under `portfolio/_/` |
 | Unclear | Ask what they want (CV path only); do **not** assume Pipeline A |
 
 Orchestration detail → [references/cv-happy-path.md](references/cv-happy-path.md).
@@ -70,7 +71,7 @@ Skip steps already done / not applicable. Detail: [references/cv-happy-path.md](
 ## Summarize CV Output Root
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\
+.agents/skills/portfolio/summarize-cv/output/
 ```
 
 | Path | Role |
@@ -80,6 +81,8 @@ c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\
 | `cv/master_cv.md` | **Master CV** (PT) |
 | `cv/master_cv.en.md` | **Master CV EN** |
 | `cv/master_cv.<job-slug>.md` | **Tailored CV** |
+| `cv/confirmed_metrics.md` | **Confirmed Metrics Ledger** — fonte de verdade de números (CV PT, `cv-import`) |
+| `cv/master_cv*.docx` | Word export via sibling [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) (gitignored) |
 | `goals.md` | **Goals Artefact** (Smart Merge) |
 
 No `linkedin/`, `companies/`, or `study/` here — those belong to sibling skills.
@@ -98,8 +101,9 @@ When `output/goals.md` is missing:
 | Kind | Name | Role |
 | --- | --- | --- |
 | Sibling skill | [`git-commits-to-cv`](../git-commits-to-cv/SKILL.md) | Commits → Hybrid Artefacts (`source: git`) |
-| Sibling skill | [`optimize-linkedin`](../optimize-linkedin/SKILL.md) | LinkedIn (stub) |
-| Sibling skill | [`study-planning`](../study-planning/SKILL.md) | Study + companies (stub) |
+| Sibling skill | [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) | MD masters/tailored → `.docx` |
+| Sibling skill (local) | `portfolio/_/optimize-linkedin` | LinkedIn (stub, gitignored) |
+| Sibling skill (local) | `portfolio/_/study-planning` | Study + companies (stub, gitignored) |
 | Reference | [goals-intake](references/goals-intake.md) | → `output/goals.md` |
 | Reference | [append-data-to-cv](references/append-data-to-cv.md) | Inbox → experience |
 | Reference | [summarize-into-doc](references/summarize-into-doc.md) | Consolidation → dual masters |
@@ -110,6 +114,7 @@ When `output/goals.md` is missing:
 
 - Explicit invocation only
 - Prefer `dictionary/` glossaries over inventing terms
+- Resolve every metric (Y) via the **Confirmed Metrics Ledger** (`output/cv/confirmed_metrics.md`) — it wins over artefact notes on conflicts; never invent a number
 - LinkedIn / study / companies → redirect to sibling skills; do not execute here
 - Pipeline A: Soft Gate goals; user-provided git paths; confirm before git scan and Master rewrite
 - Consolidation writes **only** `master_cv.md` + `master_cv.en.md` — never Portfolio CV
@@ -124,3 +129,4 @@ When `output/goals.md` is missing:
 - [references/summarize-into-doc.md](references/summarize-into-doc.md)
 - [references/adapt-cv-to-job.md](references/adapt-cv-to-job.md)
 - [../git-commits-to-cv/SKILL.md](../git-commits-to-cv/SKILL.md)
+- [../cv-md-to-docx/SKILL.md](../cv-md-to-docx/SKILL.md)
