@@ -9,8 +9,8 @@ Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) Resolved decision
 Intent claro de otimizar / montar / refrescar CV (“otimizar currículo”, “optimize CV”, “gerar master CV”, …).
 
 - Vaga específica → [adapt-cv-to-job.md](adapt-cv-to-job.md) (não este path sozinho).
-- LinkedIn → skill irmã `optimize-linkedin` (não executar aqui).
-- Estudo/empresas → skill irmã `study-planning` (não executar aqui).
+- LinkedIn → stub local `portfolio/_/optimize-linkedin` (não executar aqui).
+- Estudo/empresas → stub local `portfolio/_/study-planning` (não executar aqui).
 
 ## Sequência
 
@@ -44,7 +44,7 @@ Para cada repo ainda sem Hybrid Artefact (ou que o usuário queira refrescar):
 3. Invocar / seguir a skill irmã:
 
 ```
-c:\_git\projects\agentic-ai\.agents\skills\portfolio\git-commits-to-cv\SKILL.md
+.agents/skills/portfolio/git-commits-to-cv/SKILL.md
 ```
 
 4. **Não** auto-descobrir repos no filesystem.
@@ -58,4 +58,4 @@ c:\_git\projects\agentic-ai\.agents\skills\portfolio\git-commits-to-cv\SKILL.md
 
 ## Encerrar o Happy Path
 
-Resumir o que rodou, paths tocados, passos pulados, e itens abertos (goals checklist, métricas placeholder). Se pedirem LinkedIn/estudo/empresas → apontar `optimize-linkedin` / `study-planning`. Adapt à vaga → [adapt-cv-to-job.md](adapt-cv-to-job.md).
+Resumir o que rodou, paths tocados, passos pulados, e itens abertos (goals checklist, métricas placeholder). Se pedirem LinkedIn/estudo/empresas → apontar stubs em `portfolio/_/`. Adapt à vaga → [adapt-cv-to-job.md](adapt-cv-to-job.md).

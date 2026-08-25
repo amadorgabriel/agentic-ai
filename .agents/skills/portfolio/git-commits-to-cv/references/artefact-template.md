@@ -1,6 +1,6 @@
 # Template — Hybrid Memory Artefact
 
-Path: `c:\_git\projects\agentic-ai\.agents\skills\portfolio\summarize-cv\output\experience\<company-slug>\<project-slug>.md`
+Path: `.agents/skills/portfolio/summarize-cv/output/experience/<company-slug>/<project-slug>.md`
 
 Fill every section. Language: **PT-BR only**. Replace placeholders in `<angle brackets>`.
 

@@ -24,4 +24,4 @@ Essa pasta é só arquivo histórico. Os manifests foram renomeados de `SKILL.md
 
 - Cursor / Claude Code / ferramentas compatíveis varrem `.agents/skills/**/SKILL.md`.
 - Skills sob `_/` (gitignored) são locais ao job atual e não fazem parte da vitrine pública.
-- Outputs pessoais de carreira em `portfolio/<skill>/output/` (`summarize-cv`, `optimize-linkedin`, `study-planning`) são gitignored.
+- Outputs pessoais de carreira em `portfolio/<skill>/output/` e stubs locais em `portfolio/_/` são gitignored.
