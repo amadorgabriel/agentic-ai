@@ -10,5 +10,6 @@ Use esta pasta para workflows de engenharia que você quer reaproveitar entre pr
 | --- | --- |
 | `autofix` | Aplicar feedback de review (ex.: CodeRabbit) com aprovação |
 | `code-review` | Review de código com CodeRabbit |
+| `domain-modeling` | Glossário de domínio, ADRs, linguagem ubíqua |
 | `grilling` / `grill-with-docs` | Stress-test de planos e decisões |
 | `tlc-spec-driven` | Specify → Design → Tasks → Execute |

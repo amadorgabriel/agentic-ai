@@ -131,7 +131,7 @@ Local-only sibling stub under `portfolio/_/` (gitignored) — profile optimizati
 _Avoid_: Running LinkedIn work inside summarize-cv, committing personal LinkedIn output to the public repo
 
 **study-planning**:
-Local-only sibling stub under `portfolio/_/` (gitignored) — **Company Shortlist** + **Study Plan**. Owns `study-planning/output/`. May read Summarize CV Output Root (goals, Tailored CV JD Summary).
+Sibling skill — **Fullstack Senior Roadmap** + **Company Shortlist** + **Study Plan**. Path: `.agents/skills/portfolio/study-planning/`. Owns `study-planning/output/`. May read Summarize CV Output Root (goals, Tailored CV JD Summary).
 _Avoid_: Nesting companies/study under summarize-cv/output, committing personal shortlists to the public repo
 
 **adapt-cv-to-job**:
@@ -173,7 +173,7 @@ Optional future tracker — unresolved; not required.
 > **Domain expert:** "**Experience Memory** under **Summarize CV Output Root** — `summarize-cv/output/experience/`."
 >
 > **Dev:** "Is there still a mother skill for LinkedIn and study?"
-> **Domain expert:** "No. Tracked siblings: `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`. LinkedIn/study stubs live locally under `portfolio/_/` (gitignored)."
+> **Domain expert:** "No. Tracked siblings: `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`, `study-planning`. LinkedIn stub lives locally under `portfolio/_/` (gitignored)."
 >
 > **Dev:** "Does Consolidation update portfolio `current_cv.md`?"
 > **Domain expert:** "No. Only `master_cv.md` + `master_cv.en.md`. Portfolio sync is optional **publish-cv**."
@@ -215,7 +215,7 @@ Optional future tracker — unresolved; not required.
     - Rename `agentic-career` → `summarize-cv`; `context/` → `dictionary/`; `career/` → `cv/`
     - Flat siblings; no mother
     - Full Pipeline A + adapt in-scope; adapt = `references/adapt-cv-to-job.md`
-    - `study-planning` stub owns companies+study outputs
+    - `study-planning` owns roadmap + companies + study outputs
     - `optimize-linkedin` stub owns LinkedIn dictionary + output (profile + post-ideas mode)
     - `cv-from-commits` dictionary → `git-commits-to-cv/dictionary/`
     - JD in same inbox; cross-skill read of summarize-cv/output; no nested output READMEs
