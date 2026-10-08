@@ -22,9 +22,9 @@ Sibling skills (invocar separadamente; não executar aqui):
 
 - [`summarize-cv`](../summarize-cv/SKILL.md) — goals, Tailored CV com JD Summary
 - [`git-commits-to-cv`](../git-commits-to-cv/SKILL.md) — consolidar prática em Experience Memory
-- [`tlc-spec-driven`](../../engineering/tlc-spec-driven/SKILL.md) — projetos práticos grandes
-- [`domain-modeling`](../../engineering/domain-modeling/SKILL.md) — prática DDD/ADR
-- [`grilling`](../../engineering/grilling/SKILL.md) — stress-test antes de marcar tópico como solid
+- `tlc-spec-driven` (pessoal, `~/.cursor/skills/`) — projetos práticos grandes
+- `domain-modeling` (pessoal, `~/.cursor/skills/`) — prática DDD/ADR
+- `grilling` (pessoal, `~/.cursor/skills/`) — stress-test antes de marcar tópico como solid
 - [`optimize-linkedin`](../_/optimize-linkedin/SKILL.md) — stub local (gitignored)
 
 Glossário CV: [summarize-cv/dictionary/cv/CONTEXT.md](../summarize-cv/dictionary/cv/CONTEXT.md) — termos **Company Shortlist**, **Study Plan**, **JD Summary**.

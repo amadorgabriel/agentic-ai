@@ -71,6 +71,8 @@ SECTION_ALIASES = {
     "sumario profissional": "summary",
     "professional summary": "summary",
     "resumo": "summary",
+    "perfil": "summary",
+    "profile": "summary",
     "stack / competências": "skills",
     "stack / competencias": "skills",
     "stack": "skills",
@@ -161,6 +163,21 @@ def parse_markdown(md: str) -> CvModel:
                 cv.name = name.split(" — ", 1)[0].strip()
             elif " - " in name and "Fullstack" in name:
                 cv.name = name.split(" - ", 1)[0].strip()
+            elif ", " in name:
+                head, tail = name.split(", ", 1)
+                role_hints = (
+                    "developer",
+                    "engenheir",
+                    "frontend",
+                    "front-end",
+                    "fullstack",
+                    "pleno",
+                    "sênior",
+                    "senior",
+                    "júnior",
+                    "junior",
+                )
+                cv.name = head.strip() if any(h in tail.lower() for h in role_hints) else name
             else:
                 cv.name = name
             i += 1

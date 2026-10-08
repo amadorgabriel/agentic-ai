@@ -1,15 +1,11 @@
 # engineering
 
-Skills usadas no **desenvolvimento de software**: revisão de código, planejamento spec-driven, challenge de requisitos, autofix de feedback de PR, etc.
+Skills de **desenvolvimento de software** que continuam neste repositório.
 
-Use esta pasta para workflows de engenharia que você quer reaproveitar entre projetos.
+`grilling`, `domain-modeling`, `grill-with-docs`, `tlc-spec-driven` e `autofix` foram para skills pessoais do Cursor (`~/.cursor/skills/`), para valer em qualquer projeto.
 
 ## Skills
 
 | Skill | Papel |
 | --- | --- |
-| `autofix` | Aplicar feedback de review (ex.: CodeRabbit) com aprovação |
-| `code-review` | Review de código com CodeRabbit |
-| `domain-modeling` | Glossário de domínio, ADRs, linguagem ubíqua |
-| `grilling` / `grill-with-docs` | Stress-test de planos e decisões |
-| `tlc-spec-driven` | Specify → Design → Tasks → Execute |
+| `code-review` | Review de código com CodeRabbit (CLI via WSL Ubuntu) |

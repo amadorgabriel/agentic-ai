@@ -7,7 +7,7 @@ IA no ciclo de desenvolvimento e em produto. Alinhado ao ecossistema deste repos
 | Tópico | Objetivo senior | Prática sugerida |
 | --- | --- | --- |
 | **Cursor / Copilot** | prompts eficazes, rules, skills, review assistido | Workflow diário documentado |
-| **SDD** | Spec-Driven Development | [`tlc-spec-driven`](../../../engineering/tlc-spec-driven/SKILL.md) em feature real |
+| **SDD** | Spec-Driven Development | skill pessoal `tlc-spec-driven` em feature real |
 | **LLM fundamentals** | tokens, context window, temperature, model selection | Comparar 2 modelos numa tarefa |
 | **Semantic Kernel** | plugins, planners, .NET integration | Orquestrador simples em C# |
 | **RAG / pgvector** | chunking, embeddings, retrieval, grounding | Q&A sobre docs internos |

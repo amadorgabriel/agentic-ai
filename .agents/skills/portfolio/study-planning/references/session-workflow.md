@@ -33,9 +33,9 @@ Estrutura sugerida (adaptar ao modo):
 
 Carregar só a reference da fase atual (`phase-N-*.md`).
 
-Para tópicos arquiteturais (System Design, DDD): oferecer [`grilling`](../../../engineering/grilling/SKILL.md) antes de marcar `solid`.
+Para tópicos arquiteturais (System Design, DDD): oferecer a skill pessoal `grilling` antes de marcar `solid`.
 
-Para prática extensa: sugerir [`tlc-spec-driven`](../../../engineering/tlc-spec-driven/SKILL.md) com feature scoped ao tópico.
+Para prática extensa: sugerir a skill pessoal `tlc-spec-driven` com feature scoped ao tópico.
 
 ## 4. Update progress
 
