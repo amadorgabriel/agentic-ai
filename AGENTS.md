@@ -20,6 +20,18 @@ Categorias ativas:
 
 Essa pasta é só arquivo histórico. Os manifests foram renomeados de `SKILL.md` para `ARCHIVED.md` de propósito, para os agentes não descobrirem essas skills automaticamente.
 
+## Skills pessoais de engenharia
+
+Estas skills não estão mais neste repositório. Ficam em `~/.cursor/skills/` e valem em qualquer projeto:
+
+- `grilling`
+- `domain-modeling`
+- `grill-with-docs`
+- `tlc-spec-driven`
+- `autofix`
+
+`code-review` continua em `.agents/skills/engineering/`.
+
 ## Descoberta
 
 - Cursor / Claude Code / ferramentas compatíveis varrem `.agents/skills/**/SKILL.md`.

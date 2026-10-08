@@ -1,0 +1,29 @@
+---
+description: Proíbe o uso de travessão (em-dash) em todo conteúdo gerado
+alwaysApply: true
+---
+
+# Sem travessão (em-dash)
+
+Nunca use o caractere travessão "—" (U+2014) em nenhum conteúdo gerado: documentos, currículos, cover letters, textos de LinkedIn, comentários de código, mensagens de commit ou respostas no chat.
+
+Motivo do usuário: travessão em texto corrido é percebido como marca de conteúdo gerado por IA.
+
+## Como substituir
+
+- Pausa ou aposto explicativo: use vírgula, dois-pontos, ponto e vírgula ou parênteses.
+  - Ruim: `Entreguei o projeto — com todas as métricas — no prazo`
+  - Bom: `Entreguei o projeto, com todas as métricas, no prazo`
+- Separação empresa/cidade em CV: use vírgula.
+  - Ruim: `Spott — São Paulo, Brasil`
+  - Bom: `Spott, São Paulo, Brasil`
+- Rótulo de projeto em CV: use dois-pontos.
+  - Ruim: `Projeto — QES: liderei...`
+  - Bom: `Projeto QES: liderei...`
+- Seta "→" em texto corrido: escreva por extenso ("KingHost para AWS").
+
+## Exceções permitidas
+
+- En-dash "–" (U+2013) somente em intervalos de datas e faixas numéricas: `2023 – 2026`, `70–90 mil`.
+- Citação literal de texto de terceiros.
+- Código que exija o caractere por constraint técnica (ex.: HTML entity `&mdash;` com motivo documentado).

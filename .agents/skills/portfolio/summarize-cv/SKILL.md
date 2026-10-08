@@ -19,7 +19,8 @@ Sibling skills (invoke separately; do **not** run their work here):
 
 - [`git-commits-to-cv`](../git-commits-to-cv/SKILL.md) — commits → Experience Memory
 - [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) — Master/Tailored MD → Word `.docx` pronto para envio
-- [`optimize-linkedin`](_/optimize-linkedin/SKILL.md), [`study-planning`](_/study-planning/SKILL.md) — stubs locais em `portfolio/_/` (gitignored; não versionados)
+- [`study-planning`](../study-planning/SKILL.md) — roadmap técnico + Company Shortlist + Study Plan
+- [`optimize-linkedin`](_/optimize-linkedin/SKILL.md) — stub local em `portfolio/_/` (gitignored)
 
 ## Domain sources
 
@@ -42,7 +43,8 @@ Only on **explicit** invoke (`disable-model-invocation: true`).
 | Adapt CV to a job / JD | **adapt-cv-to-job** → [references/adapt-cv-to-job.md](references/adapt-cv-to-job.md) |
 | Export CV to Word / DOCX | **Do not execute here** — invoke sibling [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) |
 | goals / append / consolidate / git extract (explicit) | Matching reference module or sibling skill |
-| LinkedIn / study / companies | **Do not execute here** — tell user to invoke local stubs under `portfolio/_/` |
+| LinkedIn | **Do not execute here** — invoke stub `portfolio/_/optimize-linkedin` |
+| Study / companies / roadmap | **Do not execute here** — invoke [`study-planning`](../study-planning/SKILL.md) |
 | Unclear | Ask what they want (CV path only); do **not** assume Pipeline A |
 
 Orchestration detail → [references/cv-happy-path.md](references/cv-happy-path.md).
@@ -103,7 +105,7 @@ When `output/goals.md` is missing:
 | Sibling skill | [`git-commits-to-cv`](../git-commits-to-cv/SKILL.md) | Commits → Hybrid Artefacts (`source: git`) |
 | Sibling skill | [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) | MD masters/tailored → `.docx` |
 | Sibling skill (local) | `portfolio/_/optimize-linkedin` | LinkedIn (stub, gitignored) |
-| Sibling skill (local) | `portfolio/_/study-planning` | Study + companies (stub, gitignored) |
+| Sibling skill | [`study-planning`](../study-planning/SKILL.md) | Roadmap + Study Plan + Company Shortlist |
 | Reference | [goals-intake](references/goals-intake.md) | → `output/goals.md` |
 | Reference | [append-data-to-cv](references/append-data-to-cv.md) | Inbox → experience |
 | Reference | [summarize-into-doc](references/summarize-into-doc.md) | Consolidation → dual masters |
@@ -115,7 +117,7 @@ When `output/goals.md` is missing:
 - Explicit invocation only
 - Prefer `dictionary/` glossaries over inventing terms
 - Resolve every metric (Y) via the **Confirmed Metrics Ledger** (`output/cv/confirmed_metrics.md`) — it wins over artefact notes on conflicts; never invent a number
-- LinkedIn / study / companies → redirect to sibling skills; do not execute here
+- LinkedIn → redirect to `optimize-linkedin` stub; study / companies / roadmap → [`study-planning`](../study-planning/SKILL.md); do not execute here
 - Pipeline A: Soft Gate goals; user-provided git paths; confirm before git scan and Master rewrite
 - Consolidation writes **only** `master_cv.md` + `master_cv.en.md` — never Portfolio CV
 - Consolidation reads `experience/` (+ goals soft) — never raw inbox as experience

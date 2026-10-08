@@ -21,8 +21,8 @@ Cada categoria tem um `README.md` explicando o propósito. Skills ativas têm um
 
 | Categoria | O que tem |
 | --- | --- |
-| [engineering](.agents/skills/engineering/) | Code review, spec-driven, grilling, autofix… |
-| [portfolio](.agents/skills/portfolio/) | `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx` (+ stubs locais em `portfolio/_/`) |
+| [engineering](.agents/skills/engineering/) | `code-review` (CodeRabbit via WSL). Spec-driven, grilling, domain modeling e autofix estão em `~/.cursor/skills/` |
+| [portfolio](.agents/skills/portfolio/) | `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`, `study-planning` (+ stub local `optimize-linkedin` em `portfolio/_/`) |
 | [job-related](.agents/skills/job-related/) | Skills do dia a dia no emprego |
 | [deprecated](.agents/skills/deprecated/) | Skills antigas (não usar) |
 
