@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "cover-letter": {
+      "source": "claude-office-skills/skills",
+      "sourceType": "github",
+      "skillPath": "cover-letter/SKILL.md",
+      "computedHash": "e5d2de685d987af7201eb65e7bbfe7f057fcc2b210cc9c099ab6a8f43273e215"
+    },
+    "cover-letter-generator": {
+      "source": "paramchoudhary/resumeskills",
+      "sourceType": "github",
+      "skillPath": "skills/cover-letter-generator/SKILL.md",
+      "computedHash": "fa9e63ab67805746126d1c3ba8693acfe82d9e45378c3b7486d90132740dc7fe"
+    },
+    "resume-ats-optimizer": {
+      "source": "paramchoudhary/resumeskills",
+      "sourceType": "github",
+      "skillPath": "skills/resume-ats-optimizer/SKILL.md",
+      "computedHash": "150c30874a940b934f1c7155ba5cdc6021e5cf4f6be5a25b2b7332f94b9c002c"
+    }
+  }
+}

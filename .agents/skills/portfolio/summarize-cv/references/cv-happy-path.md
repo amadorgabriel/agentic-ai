@@ -10,7 +10,8 @@ Intent claro de otimizar / montar / refrescar CV (“otimizar currículo”, “
 
 - Vaga específica → [adapt-cv-to-job.md](adapt-cv-to-job.md) (não este path sozinho).
 - LinkedIn → stub local `portfolio/_/optimize-linkedin` (não executar aqui).
-- Estudo/empresas/roadmap → sibling [`study-planning`](../../study-planning/SKILL.md) (não executar aqui).
+- Carta → sibling [`cover-letter`](../../cover-letter/SKILL.md) ou [`cover-letter-generator`](../../cover-letter-generator/SKILL.md) (não executar aqui).
+- ATS → sibling [`resume-ats-optimizer`](../../resume-ats-optimizer/SKILL.md) (não executar aqui).
 
 ## Sequência
 

@@ -6,7 +6,7 @@ Skill: `.agents/skills/portfolio/summarize-cv/`
 
 **Docs home**: `.agents/skills/portfolio/summarize-cv/dictionary/` (see [CONTEXT-MAP.md](../CONTEXT-MAP.md)). Not at the `agentic-ai` repo root. Future CV grilling (`grill-with-docs`) updates `summarize-cv/dictionary/**` only.
 
-Sibling skills (flat — no mother orchestrator): `git-commits-to-cv`, `cv-md-to-docx`, `optimize-linkedin`, `study-planning`.
+Sibling skills (flat — no mother orchestrator): `git-commits-to-cv`, `cv-md-to-docx`, `cover-letter`, `cover-letter-generator`, `resume-ats-optimizer`, `optimize-linkedin`.
 
 ## Language
 
@@ -61,7 +61,7 @@ Raw JD material. Default landing zone: **Career Inbox**.
 _Avoid_: Treating raw JD as Experience Memory
 
 **JD Summary**:
-Requirements summary embedded in a **Tailored CV** so `study-planning` can work without opening the inbox file.
+Requirements summary embedded in a **Tailored CV** so later steps can work without opening the inbox file.
 _Avoid_: Dumping full raw JD into Experience Memory
 
 **Portfolio CV**:
@@ -130,9 +130,9 @@ _Avoid_: Treating Word export as a summarize-cv Reference Module; committing per
 Local-only sibling stub under `portfolio/_/` (gitignored) — profile optimization + post-ideas mode. Owns its `output/` and dictionary. May **read** Summarize CV Output Root.
 _Avoid_: Running LinkedIn work inside summarize-cv, committing personal LinkedIn output to the public repo
 
-**study-planning**:
-Sibling skill — **Fullstack Senior Roadmap** + **Company Shortlist** + **Study Plan**. Path: `.agents/skills/portfolio/study-planning/`. Owns `study-planning/output/`. May read Summarize CV Output Root (goals, Tailored CV JD Summary).
-_Avoid_: Nesting companies/study under summarize-cv/output, committing personal shortlists to the public repo
+**cover-letter** / **cover-letter-generator** / **resume-ats-optimizer**:
+Sibling skills under `portfolio/`. Cover letters and ATS checks. They may read CV and JD material; they do not write masters.
+_Avoid_: Running letter or ATS work inside summarize-cv
 
 **adapt-cv-to-job**:
 **Reference Module** (not a sibling skill folder). Reads language-appropriate master + Experience Memory + raw JD (inbox); writes **Tailored CV**. **Hard Gate** on goals.
@@ -153,7 +153,7 @@ _Avoid_: On-site-only SP as the only option
 _Avoid_: Accepting below-floor as default plan
 
 **Company Shortlist** / **Company Entry** / **Company Tier** / **Study Plan**:
-Owned by **study-planning** (`study-planning/output/companies/`, `study-planning/output/study/plan.md`). Not under Summarize CV Output Root.
+Removed with the `study-planning` skill. Not under Summarize CV Output Root.
 _Avoid_: Recreating these under summarize-cv/output
 
 **Applications Log** (deferred):
@@ -163,8 +163,8 @@ Optional future tracker — unresolved; not required.
 
 - **summarize-cv** owns **Summarize CV Output Root**; siblings may read it; only this skill (+ `git-commits-to-cv` for experience) writes CV/experience/inbox/goals; **cv-md-to-docx** writes `.docx` exports under `output/cv/`
 - **Consolidation** reads Experience Memory — not raw inbox
-- **adapt-cv-to-job** writes Tailored CV alongside masters; embeds **JD Summary** for study-planning
-- LinkedIn / study / Word-export asks → invoke sibling skills; do not Menu-dispatch execution inside summarize-cv
+- **adapt-cv-to-job** writes Tailored CV alongside masters; embeds **JD Summary**
+- LinkedIn / cover letter / ATS / Word-export asks → invoke sibling skills; do not Menu-dispatch execution inside summarize-cv
 - Soft-gated steps may use glossary defaults; hard-gated steps must not
 
 ## Example dialogue
@@ -173,7 +173,7 @@ Optional future tracker — unresolved; not required.
 > **Domain expert:** "**Experience Memory** under **Summarize CV Output Root** — `summarize-cv/output/experience/`."
 >
 > **Dev:** "Is there still a mother skill for LinkedIn and study?"
-> **Domain expert:** "No. Tracked siblings: `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`, `study-planning`. LinkedIn stub lives locally under `portfolio/_/` (gitignored)."
+> **Domain expert:** "No. Tracked siblings: `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`, `cover-letter`, `cover-letter-generator`, `resume-ats-optimizer`. LinkedIn stub lives locally under `portfolio/_/` (gitignored)."
 >
 > **Dev:** "Does Consolidation update portfolio `current_cv.md`?"
 > **Domain expert:** "No. Only `master_cv.md` + `master_cv.en.md`. Portfolio sync is optional **publish-cv**."
@@ -200,22 +200,22 @@ Optional future tracker — unresolved; not required.
 5. **Location** = híbrido/remoto SP, or exterior 100% HO LATAM priority.
 6. **Comp floor** = >10k BRL/mês.
 7. **Portfolio `.specs` cleanup** = Experience Memory sole canonical path under summarize-cv output.
-8. **Packaging** = flat siblings + Reference Modules under `summarize-cv/references/` (includes `adapt-cv-to-job`). LinkedIn/study are sibling skills, not mother modules.
+8. **Packaging** = flat siblings + Reference Modules under `summarize-cv/references/` (includes `adapt-cv-to-job`). LinkedIn, cover letter, and ATS are sibling skills, not mother modules.
 9. **Consolidation output = B** — masters under `output/cv/` only; no auto Portfolio update.
 10. **Goals intake = A** — single `output/goals.md`; Smart Merge.
 11. **Goals Intake Gating = C** — Hard: adapt + optimize-linkedin; Soft: consolidation / git / append / Pipeline A.
 12. **append-data storage = B** — inbox + normalize to experience.
 13. **LinkedIn** — owned by `optimize-linkedin` (see that dictionary). Cross-read summarize-cv output allowed.
 14. **adapt-cv-to-job output = B** — `master_cv.<job-slug>.md` alongside Master; JD in Career Inbox. Implemented as Reference Module (decision 19).
-15. **Companies + study** — owned by `study-planning` (`output/companies/br.md`, `latam.md`, `output/study/plan.md`).
+15. **Companies + study** — were owned by `study-planning`; that skill was removed from the repo. Do not recreate those outputs under summarize-cv.
 16. **CV language = B (dual-track)** — artefacts PT-BR; dual masters; tailored = JD language.
-17. **Routing** — CV optimize → Pipeline A; adapt → adapt module; LinkedIn/study → redirect to siblings (no Menu C orchestration of siblings).
+17. **Routing** — CV optimize → Pipeline A; adapt → adapt module; LinkedIn / cover letter / ATS → redirect to siblings (no Menu C orchestration of siblings).
 18. **Phase 1 history** — CV pipeline reference modules shipped under former `agentic-career`.
 19. **Redesign grill 2026-08-06 (grill-with-docs)** — user decisions Q1–Q20:
     - Rename `agentic-career` → `summarize-cv`; `context/` → `dictionary/`; `career/` → `cv/`
     - Flat siblings; no mother
     - Full Pipeline A + adapt in-scope; adapt = `references/adapt-cv-to-job.md`
-    - `study-planning` owns roadmap + companies + study outputs
+    - `study-planning` was removed from the repo; do not route study or company shortlist work to it
     - `optimize-linkedin` stub owns LinkedIn dictionary + output (profile + post-ideas mode)
     - `cv-from-commits` dictionary → `git-commits-to-cv/dictionary/`
     - JD in same inbox; cross-skill read of summarize-cv/output; no nested output READMEs

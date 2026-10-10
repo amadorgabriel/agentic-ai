@@ -38,7 +38,7 @@ Fonte: [dictionary/cv/CONTEXT.md](../dictionary/cv/CONTEXT.md) (Resolved 14, 19)
 4. **Select evidence** — from Experience Memory XYZ bullets (and masters), prioritize bullets that match must-haves; keep honesty (no invented metrics; resolve numbers via the **Confirmed Metrics Ledger** at `output/cv/confirmed_metrics.md`, and keep `[MÉTRICA A CONFIRMAR]` only when still unresolved there).
 5. **Rewrite** — produce one Tailored CV:
    - Optional YAML/frontmatter: `job_slug`, `jd_inbox_path`, `generated_at`, `based_on` (master file)
-   - Section **JD Summary** (short: role, must-haves, keywords) for later `study-planning`
+   - Section **JD Summary** (short: role, must-haves, keywords)
    - Summary/profile line aligned to JD + goals positioning
    - Experience bullets reordered/trimmed for relevance (still XYZ; PT-BR artefacts stay PT in memory — only the Tailored file follows JD language)
    - Skills/stack section reflecting JD overlap without fake proficiency
@@ -91,5 +91,4 @@ generated_at: <ISO-8601>
 
 ## After adapt
 
-- Gaps vs JD may inform sibling **`study-planning`** (user invokes separately).
-- Do not auto-run study or LinkedIn from this module.
+- Do not auto-run LinkedIn, cover letter, or ATS from this module.

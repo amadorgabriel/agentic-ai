@@ -10,4 +10,4 @@ Pasta de **arquivo**: skills que **não são mais usadas**.
 
 ## Para humanos
 
-O conteúdo permanece como referência histórica. Para reativar uma skill, mova-a para a categoria certa (`engineering`, `portfolio` ou `job-related`) e renomeie `ARCHIVED.md` de volta para `SKILL.md`.
+O conteúdo permanece como referência histórica. Para reativar uma skill, mova-a para a categoria certa (`engineering` ou `portfolio`) e renomeie `ARCHIVED.md` de volta para `SKILL.md`.

@@ -12,7 +12,6 @@ Categorias ativas:
 | --- | --- |
 | `engineering/` | Desenvolvimento de software |
 | `portfolio/` | Carreira, CV, LinkedIn e portfólio |
-| `job-related/` | Contexto do emprego atual |
 
 ## Ignorar `deprecated/`
 

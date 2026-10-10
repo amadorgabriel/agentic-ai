@@ -19,7 +19,9 @@ Sibling skills (invoke separately; do **not** run their work here):
 
 - [`git-commits-to-cv`](../git-commits-to-cv/SKILL.md) — commits → Experience Memory
 - [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) — Master/Tailored MD → Word `.docx` pronto para envio
-- [`study-planning`](../study-planning/SKILL.md) — roadmap técnico + Company Shortlist + Study Plan
+- [`cover-letter`](../cover-letter/SKILL.md) — carta de apresentação para uma vaga
+- [`cover-letter-generator`](../cover-letter-generator/SKILL.md) — carta a partir de currículo e JD
+- [`resume-ats-optimizer`](../resume-ats-optimizer/SKILL.md) — compatibilidade ATS e keywords
 - [`optimize-linkedin`](_/optimize-linkedin/SKILL.md) — stub local em `portfolio/_/` (gitignored)
 
 ## Domain sources
@@ -44,7 +46,8 @@ Only on **explicit** invoke (`disable-model-invocation: true`).
 | Export CV to Word / DOCX | **Do not execute here** — invoke sibling [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) |
 | goals / append / consolidate / git extract (explicit) | Matching reference module or sibling skill |
 | LinkedIn | **Do not execute here** — invoke stub `portfolio/_/optimize-linkedin` |
-| Study / companies / roadmap | **Do not execute here** — invoke [`study-planning`](../study-planning/SKILL.md) |
+| Cover letter | **Do not execute here** — invoke [`cover-letter`](../cover-letter/SKILL.md) or [`cover-letter-generator`](../cover-letter-generator/SKILL.md) |
+| ATS / keyword match | **Do not execute here** — invoke [`resume-ats-optimizer`](../resume-ats-optimizer/SKILL.md) |
 | Unclear | Ask what they want (CV path only); do **not** assume Pipeline A |
 
 Orchestration detail → [references/cv-happy-path.md](references/cv-happy-path.md).
@@ -87,7 +90,7 @@ Skip steps already done / not applicable. Detail: [references/cv-happy-path.md](
 | `cv/master_cv*.docx` | Word export via sibling [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) (gitignored) |
 | `goals.md` | **Goals Artefact** (Smart Merge) |
 
-No `linkedin/`, `companies/`, or `study/` here — those belong to sibling skills.
+No `linkedin/` here — that belongs to the LinkedIn stub. Do not recreate `companies/` or `study/` under this output root.
 
 ## Goals Intake Gating
 
@@ -105,7 +108,9 @@ When `output/goals.md` is missing:
 | Sibling skill | [`git-commits-to-cv`](../git-commits-to-cv/SKILL.md) | Commits → Hybrid Artefacts (`source: git`) |
 | Sibling skill | [`cv-md-to-docx`](../cv-md-to-docx/SKILL.md) | MD masters/tailored → `.docx` |
 | Sibling skill (local) | `portfolio/_/optimize-linkedin` | LinkedIn (stub, gitignored) |
-| Sibling skill | [`study-planning`](../study-planning/SKILL.md) | Roadmap + Study Plan + Company Shortlist |
+| Sibling skill | [`cover-letter`](../cover-letter/SKILL.md) | Carta de apresentação |
+| Sibling skill | [`cover-letter-generator`](../cover-letter-generator/SKILL.md) | Carta a partir de CV + JD |
+| Sibling skill | [`resume-ats-optimizer`](../resume-ats-optimizer/SKILL.md) | ATS e keywords |
 | Reference | [goals-intake](references/goals-intake.md) | → `output/goals.md` |
 | Reference | [append-data-to-cv](references/append-data-to-cv.md) | Inbox → experience |
 | Reference | [summarize-into-doc](references/summarize-into-doc.md) | Consolidation → dual masters |
@@ -117,7 +122,7 @@ When `output/goals.md` is missing:
 - Explicit invocation only
 - Prefer `dictionary/` glossaries over inventing terms
 - Resolve every metric (Y) via the **Confirmed Metrics Ledger** (`output/cv/confirmed_metrics.md`) — it wins over artefact notes on conflicts; never invent a number
-- LinkedIn → redirect to `optimize-linkedin` stub; study / companies / roadmap → [`study-planning`](../study-planning/SKILL.md); do not execute here
+- LinkedIn → redirect to `optimize-linkedin` stub; cover letter → [`cover-letter`](../cover-letter/SKILL.md) or [`cover-letter-generator`](../cover-letter-generator/SKILL.md); ATS → [`resume-ats-optimizer`](../resume-ats-optimizer/SKILL.md); do not execute here
 - Pipeline A: Soft Gate goals; user-provided git paths; confirm before git scan and Master rewrite
 - Consolidation writes **only** `master_cv.md` + `master_cv.en.md` — never Portfolio CV
 - Consolidation reads `experience/` (+ goals soft) — never raw inbox as experience

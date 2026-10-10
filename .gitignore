@@ -8,13 +8,11 @@
 
 
 .agents/skills/deprecated/**/
-.agents/skills/job-related/**/
 
 
 # Portfolio personal outputs (gitignored; no README placeholders required)
 .agents/skills/portfolio/summarize-cv/output/**
 .agents/skills/portfolio/optimize-linkedin/output/**
-.agents/skills/portfolio/study-planning/output/**
 .agents/skills/portfolio/cv-md-to-docx/assets/*.docx
 
 # Python bytecode

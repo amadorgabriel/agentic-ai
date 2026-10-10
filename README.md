@@ -3,7 +3,7 @@
 Vitrine das minhas **skills de agentes de IA** — workflows reutilizáveis para Cursor, Claude Code e ferramentas compatíveis.
 
 > **Descrição sugerida (GitHub About):**  
-> Vitrine de skills de agentes de IA: engenharia, portfolio e job-related — workflows reutilizáveis para Cursor/Claude.
+> Vitrine de skills de agentes de IA: engenharia e portfolio — workflows reutilizáveis para Cursor/Claude.
 
 ## Estrutura
 
@@ -11,7 +11,6 @@ Vitrine das minhas **skills de agentes de IA** — workflows reutilizáveis para
 .agents/skills/
 ├── engineering/   # skills de desenvolvimento
 ├── portfolio/     # carreira, CV, LinkedIn, portfólio
-├── job-related/   # emprego atual
 └── deprecated/    # arquivo histórico — agentes devem ignorar
 ```
 
@@ -22,8 +21,7 @@ Cada categoria tem um `README.md` explicando o propósito. Skills ativas têm um
 | Categoria | O que tem |
 | --- | --- |
 | [engineering](.agents/skills/engineering/) | `code-review` (CodeRabbit via WSL). Spec-driven, grilling, domain modeling e autofix estão em `~/.cursor/skills/` |
-| [portfolio](.agents/skills/portfolio/) | `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`, `study-planning` (+ stub local `optimize-linkedin` em `portfolio/_/`) |
-| [job-related](.agents/skills/job-related/) | Skills do dia a dia no emprego |
+| [portfolio](.agents/skills/portfolio/) | `summarize-cv`, `git-commits-to-cv`, `cv-md-to-docx`, `cover-letter`, `cover-letter-generator`, `resume-ats-optimizer` (+ stub local `optimize-linkedin` em `portfolio/_/`) |
 | [deprecated](.agents/skills/deprecated/) | Skills antigas (não usar) |
 
 ## Como os agentes devem se comportar
